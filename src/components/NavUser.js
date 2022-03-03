@@ -40,11 +40,11 @@ flex-direction:row;
 `
 
 
-const NavUser = ({ isLogin }) => {
+const NavUser = () => {
     const navigate = useNavigate();
     const location = useSelector((store) => store.user.location);
     const getUserLocalST = JSON.parse(localStorage.getItem("usermiaguacate")) || []
-  const { displayName, email, photoURL } = getUserLocalST;
+  const { displayName, uid, photoURL } = getUserLocalST;
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -64,7 +64,7 @@ const NavUser = ({ isLogin }) => {
         <b>{location ? "🏠" + location : null}</b>
         </DivUserinfo>
        
-            {isLogin ? (
+            {uid ? (
               <>
                 <Button
                   variant="danger"
