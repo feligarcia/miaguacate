@@ -35,9 +35,7 @@ const AppRouter = () => {
   }
 
   return (
-    <div className="App">
-      <BrowserRouter>
-        
+    <BrowserRouter>
         <Routes>
           <Route
             path="/*"
@@ -66,7 +64,6 @@ const AppRouter = () => {
           />
         </Routes>
       </BrowserRouter>
-    </div>
   );
 };
 

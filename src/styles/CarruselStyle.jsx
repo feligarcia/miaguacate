@@ -27,10 +27,10 @@ export const ListaSlider = styled.ul `
         20% {margin-left: 5%;}
         25% {margin-left: -65%;}
         45% {margin-left: -65%;}
-        50% {margin-left: -130%;}
-        70% {margin-left: -130%;}
-        75% {margin-left: -230%;}
-        100% {margin-left: -230%;}
+        50% {margin-left: -140%;}
+        70% {margin-left: -140%;}
+        75% {margin-left: -220%;}
+        100% {margin-left: -220%;}
     } 
 `
 

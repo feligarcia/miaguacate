@@ -1,18 +1,8 @@
 import LogoNavCo from "../styles/LogoNavCo";
 import React, { useEffect } from "react";
-import {
-  Button,
-  Container,
-  FormControl,
-  InputGroup,
-  Nav,
-  Navbar,
-} from "react-bootstrap";
-import { logoutAsincrono } from "../redux/actions/actionLogin";
+import {  Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useFormik } from "formik";
-import { actionSearch } from "../redux/actions/actionSearch";
 import Avatar from "../data/images/avatar.png";
 import styled from "styled-components";
 import { locationAsincrono } from "../redux/actions/userLocation";
@@ -22,7 +12,6 @@ const DivNavUser = styled.div`
   flex-direction: row;
   position: relative;
   top: 0;
-
   justify-content: space-between;
 `;
 
@@ -30,6 +19,12 @@ const DivUserinfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  & h5 {
+    
+    color: #7B421B;
+    font-weight: 600;
+  }
 `;
 const DivSesionUser = styled.div`
   display: flex;
@@ -54,36 +49,28 @@ const NavUser = () => {
       <DivSesionUser>
         <DivUserinfo>
           <h3>{displayName}</h3>
-
           <h5>Productor - organizar</h5>
           <b>{location ? "🏠" + location : null}</b>
         </DivUserinfo>
 
-        {uid ? (
-          <>
-            
-            <img
-              alt=""
-              src={getUserLocalST ? photoURL : Avatar}
-              className="icon-avatar"
-              
-              onClick={() => navigate("/cuenta")}
-              />
-            <Button
-              variant="danger"
-              onClick={() => {
-                dispatch(logoutAsincrono());
-                navigate("/");
-              }}
-            >
-              Cerrar sesion
+        {
+          uid ? (
+            <>
+              <img
+                alt=""
+                src={getUserLocalST ? photoURL : Avatar}
+                className="icon-avatar"
+                onClick={() => navigate("/cuenta")}
+                style={{width:'80px', height:'80px', margin:'10px', objectFit:'cover'}}
+                />
+            </>
+          ) 
+          : (
+            <Button variant="primary" onClick={() => navigate("/login")}>
+              Ingresar
             </Button>
-          </>
-        ) : (
-          <Button variant="primary" onClick={() => navigate("/login")}>
-            Ingresar
-          </Button>
-        )}
+          )
+        }
       </DivSesionUser>
     </DivNavUser>
   );

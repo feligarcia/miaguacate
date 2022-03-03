@@ -9,7 +9,6 @@ import {
   loginFacebook,
 } from "../redux/actions/actionLogin";
 import { useNavigate } from "react-router-dom";
-import { Button } from "react-bootstrap";
 import Logo from '../data/images/logo.png'
 import LogoLogin from "../styles/LogoLogin";
 
@@ -65,9 +64,9 @@ const Login = () => {
           onChange={formik.handleChange}
         />
         <div className="d-grid gap-2 mx-auto mt-2">
-          <Button value="Save" type="submit" variant="outline-primary">
+          <button value="Save" type="submit" variant="outline-primary">
             Ingresar
-          </Button>
+          </button>
         </div>
         </form>
         <p>Puedes probar con prueba@prueba.com | 123456</p>

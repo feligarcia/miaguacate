@@ -14,7 +14,7 @@ const Home = () => {
       <CarruselHome />
 
       <div>
-        <h2>Categorias por buscar</h2>
+        <h2 style={{margin:'10px 50px'}}>Categorias por buscar</h2>
         <CategoriasHome />
       </div>
       <Footer />

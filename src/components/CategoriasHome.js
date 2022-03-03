@@ -42,7 +42,7 @@ const CategoriasHome = () => {
           </TarjetaWrap>
       </div>
 
-      <div style={{display:'flex', justifyContent:'space-around'}}>
+      <div style={{display:'flex'}}>
         <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(217, 234, 123, 100)'}}>
           <div className="tarjeta">
               <div className="adelante">
@@ -81,7 +81,7 @@ const CategoriasHome = () => {
       </div>
 
 
-      <div style={{display:'flex', justifyContent:'space-between'}}>
+      <div style={{display:'flex'}}>
         <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(226, 174, 131, 100)'}}>
           <div className="tarjeta">
               <div className="adelante">

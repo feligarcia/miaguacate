@@ -36,7 +36,7 @@ function LogoLogin() {
     <DivLogoNav>
 
         <LogoNav></LogoNav>
-        <TextLogoNav>miaguacate</TextLogoNav>
+        <TextLogoNav>miAguacate</TextLogoNav>
     </DivLogoNav>
   )
 }

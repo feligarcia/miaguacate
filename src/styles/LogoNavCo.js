@@ -36,7 +36,7 @@ function LogoNavCo() {
     <DivLogoNav>
 
         <LogoNav></LogoNav>
-        <TextLogoNav>miaguacate</TextLogoNav>
+        <TextLogoNav>miAguacate</TextLogoNav>
     </DivLogoNav>
   )
 }
