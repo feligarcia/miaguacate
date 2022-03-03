@@ -1,17 +1,9 @@
 
 import {  Modal } from "react-bootstrap";
 import styled from "styled-components";
-import {
-  BtnViewNow,
-  BtnViewLater,
-  BtnViewLogo,
-} from "../styleds/BtnView";
-import PlayLogo from "../data/images/play.png";
-import PlusLogo from "../data/images/plus.png";
-
 import { useDispatch, useSelector } from "react-redux";
 import { CloseModal } from "../redux/actions/showModal";
-import { regisFavASincrono } from "../redux/actions/favActions";
+
 
 
 const DivImg = styled.div`
@@ -44,8 +36,8 @@ const DivDescription = styled.div`
 export const ModalIni =  () => {
   const dispatch = useDispatch();
   const { lgShow } = useSelector((store) => store.app);
-   const { movie } =  useSelector((store) => store.app);
-   const getUserLocalST = JSON.parse(localStorage.getItem('userBMApp'))
+console.log(lgShow)
+   const getUserLocalST = JSON.parse(localStorage.getItem('usermiaguacate'))
   return (
     <>
       <Modal
@@ -56,33 +48,9 @@ export const ModalIni =  () => {
         className="modal"
       >
         <DivDescription>
-          <button
-            type="button"
-            className="btn-close"
-            aria-label="Close"
-            onClick={() => dispatch(CloseModal())}
-          ></button>
-          <h1>{movie?.titulo}</h1>
-          <p>
-            {movie?.descripcion}
-          </p>
-          <br></br>
-          <Pdata>{movie?.rating}   ·   {movie?.fecha_lanzamiento?.slice(0,4)}</Pdata>
-          <br></br>
-          <DivBtnModal>
-            <BtnViewNow title={movie?.id} onClick={()=>window.open(movie?.trailer,'_blank')} >
-              <BtnViewLogo src={PlayLogo} />
-              VER TRAILER
-            </BtnViewNow>
-            <BtnViewLater title={movie?.id} onClick={() => dispatch(regisFavASincrono(movie, getUserLocalST.email))}>
-              <BtnViewLogo src={PlusLogo} />
-              VER DESPUÉS
-            </BtnViewLater>
-          </DivBtnModal>
+          <h1>MOdal de prueba</h1>
         </DivDescription>
-        <DivImg>
-          <ImgDes src={movie?.imagen} />
-        </DivImg>
+       
         
       </Modal>
     </>

@@ -9,5 +9,7 @@ export const types = {
   logout: "Logout User",
   search: "search Pokemon",
 
-  location: 'location User'
+  location: 'location User',
+  mostrarModal: 'mostrarModal app'
+  
 };

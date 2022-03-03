@@ -88,11 +88,12 @@ const Registro = () => {
             Registrar
           </button>
         </div>
+        </form>
         <br></br>
         <h6 onClick={() => navigate("/login")} className="linklogintitle">
           ¿Ya tienes una cuenta? <span>Haz click aqui</span>
         </h6>
-      </form>
+      
     </Body>
   );
 };

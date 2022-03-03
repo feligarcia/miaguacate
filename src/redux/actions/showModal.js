@@ -1,17 +1,17 @@
-import { typesFunction } from "../types/types";
+import { types } from "../types/types.js";
 
 export const ShowModal = (movie) => {
 
   return {
-    type: typesFunction.mostrarModal,
+    type: types.mostrarModal,
     payload: true,
-    movie:movie,
+  
   };
 };
 
 export const CloseModal = () => {
   return {
-    type: typesFunction.mostrarModal,
+    type: types.mostrarModal,
     payload: false,
   };
 };

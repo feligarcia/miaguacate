@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { actionSearch } from "../redux/actions/actionSearch";
 import Avatar from '../data/images/avatar.png'
+import { ShowModal } from "../redux/actions/showModal";
 
 
 const NavIni = ({ isLogin }) => {
@@ -35,10 +36,14 @@ const NavIni = ({ isLogin }) => {
       <Navbar  sticky="top" className='navbarini'>
         <Container>
        
-          <Navbar.Brand onClick={() => navigate("/")}></Navbar.Brand>
+        
           <Nav className="me-auto">
             <Nav.Link onClick={() => navigate("/")}>Inicio</Nav.Link>
-            <p id="clickinicio">.</p>
+            <Nav.Link onClick={() => navigate("/categorias/default")}>Categorias</Nav.Link>
+            <Nav.Link onClick={() => navigate("/laruta")}>La ruta del aguacate</Nav.Link>
+            <Nav.Link onClick={() => navigate("/simulador")}>Simulador</Nav.Link>
+            <Nav.Link onClick={() => dispatch(ShowModal())}>Probar Modal</Nav.Link>
+            
           </Nav>
 
           

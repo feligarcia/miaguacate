@@ -28,7 +28,7 @@ export const appReducer = (state = initialState, action) => {
         return {
           ...state,
           lgShow: action.payload,
-          movie: action.movie
+         
         };
   
       case types.listpokes:

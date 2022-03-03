@@ -41,7 +41,6 @@ const Login = () => {
     <Body className="divlog">
       <LogoLogin />
      
-        <label>Correo electrónico</label>
 
       <form className="form-group" onSubmit={formik.handleSubmit}>
         <input
@@ -70,6 +69,7 @@ const Login = () => {
             Ingresar
           </Button>
         </div>
+        </form>
         <p>Puedes probar con prueba@prueba.com | 123456</p>
 
         <div style={{background:'white'}} onClick={handleGoogle} className="handleSocial">
@@ -87,7 +87,7 @@ const Login = () => {
           {" "}
           ¿Deseas crear una cuenta? <span>Haz click aqui</span>
         </h6>
-      </form>
+      
     </Body>
   );
 };

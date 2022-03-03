@@ -4,6 +4,7 @@ import CategoriasHome from '../components/CategoriasHome'
 import Footer from '../components/Footer'
 import NavIni from '../components/NavIni'
 import NavUser from '../components/NavUser'
+import {ModalIni} from '../components/ModalIni'
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         <CategoriasHome />
       </div>
       <Footer />
+      <ModalIni />
     </div>
     
   )
