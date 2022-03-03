@@ -1,6 +1,4 @@
 import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
-
-
 import Login from "../components/Login";
 import Registro from "../components/Registro";
 import { useEffect, useState } from "react";
@@ -34,6 +32,7 @@ const AppRouter = () => {
   if (checking) {
     return <Loader />;
   }
+
   return (
     <div className="App">
       <HashRouter>
