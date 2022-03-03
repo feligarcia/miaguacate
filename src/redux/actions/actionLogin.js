@@ -7,7 +7,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import { facebook, google } from "../../firebaseConfig.js";
+import { facebook, google } from "../../keys/firebaseConfig";
 
 export const loginFacebook = () => {
   return (dispatch) => {

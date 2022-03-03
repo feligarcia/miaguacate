@@ -1,10 +1,11 @@
 import { types } from "../types/types";
 
 const initialState = {
-  listpokemons:[],
-  favPokemons: [],
+  roadmap:0,
+  usertype: 'default',
   search: "",
   lgShow: false,
+  location:'',
 };
 
 export const appReducer = (state = initialState, action) => {

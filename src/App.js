@@ -1,9 +1,13 @@
+import Loader from "./components/Loader";
+import Login from "./components/Login";
+import AppRouter from "./routers/AppRouter";
 
 
 function App() {
   return (
     <div className="App">
-     <h1>Conexxixion</h1>
+     
+     <AppRouter />
     </div>
   );
 }

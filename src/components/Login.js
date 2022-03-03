@@ -7,9 +7,9 @@ import {
   loginEmailPassword,
   loginFacebook,
 } from "../redux/actions/actionLogin";
-
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import Logo from '../data/images/logo.png'
 
 const Login = () => {
   const navigate = useNavigate();
@@ -37,6 +37,7 @@ const Login = () => {
 
   return (
     <div className="divlog">
+      <img alt='' src={Logo} className='logologin'/>
       <form className="form-group" onSubmit={formik.handleSubmit}>
         <label>Correo electrónico</label>
 
@@ -85,13 +86,13 @@ const Login = () => {
           </p>
         </div>
         <br></br>
-
+      <div className="face-icon">
         <img
           onClick={handleFacebook}
-          className="face-icon"
+          
           src="https://scontent.feoh4-3.fna.fbcdn.net/v/t39.2365-6/17639236_1785253958471956_282550797298827264_n.png?_nc_cat=105&ccb=1-5&_nc_sid=ad8a9d&_nc_eui2=AeGuNfqzKUEqyoe9TXtNuhyTDpRKUGl8lBMOlEpQaXyUE0eONNlAaXo9dvUfEaw_MjOGEu0OH1fUkcPG06d-uBV4&_nc_ohc=7OIt3P9C1a4AX8w0tH8&_nc_ht=scontent.feoh4-3.fna&oh=00_AT80QfKiSQ3t8hZWNvUeCROBcCLzim25co5kFo0nb4Xi_g&oe=62216A16"
           alt=""
-        />
+        /></div>
         <br></br>
         <br></br>
         <h6 onClick={() => navigate("/registro")} className="linklogintitle">

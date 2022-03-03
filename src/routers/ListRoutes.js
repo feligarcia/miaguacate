@@ -1,16 +1,13 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { ModalMovie } from "../components/ModalMovie";
-import Home from "../container/Home";
-import Personal from "../container/Personal";
+import Loader from "../components/Loader";
+import Home from "../containers/Home";
 
 export const ListRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />}>
-        </Route>
-        <Route path="modal/:id" element={<ModalMovie />} />
-        <Route path="personal" element={<Personal />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Loader />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>

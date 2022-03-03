@@ -1,17 +1,17 @@
 import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
-import "../styles/App.css";
-import ListCard from "../containers/ListCard";
-import Navbarapp from "../components/Navbarapp";
-import CardDetail from "../components/CardDetail";
+
+
 import Login from "../components/Login";
 import Registro from "../components/Registro";
-import Favorites from "../components/Favorites";
 import { useEffect, useState } from "react";
-import Loader from "../components/Loader";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { LoginRoutes } from "./LoginRoutes";
+import Loader from "../components/Loader";
+import { PrivateRoutes } from "./PrivateRoutes";
+import PublicRoutes from "./PublicRoutes";
+import { ListRoutes } from "./ListRoutes";
+import NavIni from "../components/NavIni";
 
-function App() {
+const AppRouter = () => {
   const [checking, setChecking] = useState(true);
   const [isLogin, setIsLogin] = useState(false);
 
@@ -21,11 +21,11 @@ function App() {
       if (user?.uid) {
         setIsLogin(true);
         const { uid, displayName, photoURL } = user;
-        const sesion = {  uid, displayName, photoURL };
-        localStorage.setItem("userPoke", JSON.stringify(sesion));
+        const sesion = { uid, displayName, photoURL };
+        localStorage.setItem("usermiaguacate", JSON.stringify(sesion));
       } else {
         setIsLogin(false);
-        localStorage.removeItem("userPoke");
+        localStorage.removeItem("usermiaguacate");
       }
       setChecking(false);
     });
@@ -37,34 +37,37 @@ function App() {
   return (
     <div className="App">
       <HashRouter>
-        <Navbarapp isLogin={isLogin} />
+        <NavIni isLogin={isLogin} />
         <Routes>
-          <Route path="/" element={<ListCard />} />
-          <Route path="/pokemon/:id" element={<CardDetail />} />        
-          <Route path="/favorites" element={<Favorites />} />
+          <Route
+            path="/"
+            element={
+              <PrivateRoutes isAuthenticated={isLogin}>
+                <ListRoutes />
+              </PrivateRoutes>
+            }
+          />
 
           <Route
             path="/login"
             element={
-              <LoginRoutes isAuthenticated={isLogin}>
+              <PublicRoutes isAuthenticated={isLogin}>
                 <Login />
-              </LoginRoutes>
+              </PublicRoutes>
             }
           />
           <Route
             path="/registro"
             element={
-              <LoginRoutes isAuthenticated={isLogin}>
+              <PublicRoutes isAuthenticated={isLogin}>
                 <Registro />
-              </LoginRoutes>
+              </PublicRoutes>
             }
           />
-
-          
         </Routes>
       </HashRouter>
     </div>
   );
-}
+};
 
-export default App;
+export default AppRouter;

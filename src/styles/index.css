@@ -1,13 +1,50 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+/* Seccion del login */
+
+.face-icon img {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.linklogintitle:hover {
+  color: rgb(173, 3, 3);
+}
+.divlog {
+  width: 400px;
+  height: fit-content;
+  margin: 50px auto;
+}
+.logologin {
+  margin: 0 auto;
+  width: 100px;
+  height: fit-content;
+}
+
+/* Barra principal de navegacion */
+.icon-avatar{
+  
+  border-style:none;
+/* background-image: url(${Avatar}); */
+   width: 50px;
+   height: 50px;
+   border-radius:50%;
+   background-color: initial;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.logonav{
+  width: 50px;
+  height: 50px;
 }

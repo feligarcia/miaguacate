@@ -1,6 +1,5 @@
 import axios from "axios";
-import { keygoogle } from "../../keys.js";
-
+import { keygoogle } from "../../keys/keys.js";
 import { types } from "../types/types.js";
 
 export const locationAsincrono = () => {

@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { createUserActionAsincrono } from "../redux/actions/actionLogin";
-import { imgUpload } from "../functions/imgUpload";
+import { imgUpload } from "../keys/imgUpload";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import Logo from '../data/images/logo.png'
 
 const Registro = () => {
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ const Registro = () => {
 
   return (
     <div className="divlog">
+      <img alt='' src={Logo} className='logologin'/>
       <form className="form-group" onSubmit={formik.handleSubmit}>
         <label>Nombre</label>
         <input
