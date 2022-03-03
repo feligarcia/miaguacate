@@ -67,6 +67,10 @@ export const Body = styled.div `
         border-radius: 5px;
         margin: 0 15px;
         z-index: 2;
+
+        &:hover {
+            background: rgba(180, 234, 123, 100);
+        }
     }
 
     & .handleSocial{
