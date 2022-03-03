@@ -3,11 +3,11 @@ import { TarjetaWrap } from '../styles/CategoriasStyle'
 
 const CategoriasHome = () => {
   return (
-    <div style={{display:'flex', flexWrap:'wrap'}}>
-      <TarjetaWrap className="TarjetaWrap">
+    <div style={{display:'flex', flexWrap:'wrap', margin:' 5px 8%', justifyContent:'center'}}>
+      <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(0, 189, 93, 0.39)'}}>
         <div className="tarjeta">
             <div className="adelante">
-                Herramientas y maquinaria
+                <h2>Herramientas y maquinaria</h2>
             </div>
 
               <div className="info">
@@ -16,10 +16,10 @@ const CategoriasHome = () => {
         </div>
       </TarjetaWrap>
 
-      <TarjetaWrap className="TarjetaWrap">
+      <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(163, 230, 137, 100)'}}>
         <div className="tarjeta">
             <div className="adelante">
-                Insumos
+                <h2>Insumos</h2>
             </div>
 
               <div className="info">
@@ -28,10 +28,10 @@ const CategoriasHome = () => {
         </div>
       </TarjetaWrap>
 
-      <TarjetaWrap className="TarjetaWrap">
+      <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(87, 169, 55, 100)'}}>
         <div className="tarjeta">
             <div className="adelante">
-                Financiacion
+                <h2>Financiacion</h2>
             </div>
 
               <div className="info">
@@ -40,10 +40,10 @@ const CategoriasHome = () => {
         </div>
       </TarjetaWrap>
 
-      <TarjetaWrap className="TarjetaWrap">
+      <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(217, 234, 123, 100)'}}>
         <div className="tarjeta">
             <div className="adelante">
-                Comercializacion
+                <h2>Comercializacion</h2>
             </div>
 
               <div className="info">
@@ -52,10 +52,10 @@ const CategoriasHome = () => {
         </div>
       </TarjetaWrap>
 
-      <TarjetaWrap className="TarjetaWrap">
+      <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(255, 240, 130, 100)'}}>
         <div className="tarjeta">
             <div className="adelante">
-                Administracion
+                <h2>Administracion</h2>
             </div>
 
               <div className="info">
@@ -64,10 +64,10 @@ const CategoriasHome = () => {
         </div>
       </TarjetaWrap>
 
-      <TarjetaWrap className="TarjetaWrap">
+      <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(255, 226, 110, 100)'}}>
         <div className="tarjeta">
             <div className="adelante">
-                Mano de obra
+                <h2>Mano de obra</h2>
             </div>
 
               <div className="info">
@@ -76,10 +76,10 @@ const CategoriasHome = () => {
         </div>
       </TarjetaWrap>
 
-      <TarjetaWrap className="TarjetaWrap">
+      <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(226, 174, 131, 100)'}}>
         <div className="tarjeta">
             <div className="adelante">
-                Control Fitosanitario
+                <h2>Control Fitosanitario</h2>
             </div>
 
               <div className="info">
@@ -88,10 +88,10 @@ const CategoriasHome = () => {
         </div>
       </TarjetaWrap>
 
-      <TarjetaWrap className="TarjetaWrap">
+      <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(213, 141, 73, 100)'}}>
         <div className="tarjeta">
             <div className="adelante">
-                Certificaciones
+                <h2>Certificaciones</h2>
             </div>
 
               <div className="info">
@@ -100,10 +100,10 @@ const CategoriasHome = () => {
         </div>
       </TarjetaWrap>
 
-      <TarjetaWrap className="TarjetaWrap">
+      <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(200, 110, 55, 100)'}}>
         <div className="tarjeta">
             <div className="adelante">
-                Estudios y mapas
+                <h2>Estudios y mapas</h2>
             </div>
 
               <div className="info">
