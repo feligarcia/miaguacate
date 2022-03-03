@@ -3,8 +3,8 @@ import { TarjetaWrap } from '../styles/CategoriasStyle'
 
 const CategoriasHome = () => {
   return (
-    <div style={{display:'flex', flexWrap:'wrap', justifyContent:'space-around'}}>
-      <div>
+    <div style={{display:'flex', flexWrap:'wrap', justifyContent:'center'}}>
+      <div style={{display:'flex'}}>
           <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(0, 189, 93, 0.39)'}}>
             <div className="tarjeta">
                 <div className="adelante">
@@ -42,7 +42,7 @@ const CategoriasHome = () => {
           </TarjetaWrap>
       </div>
 
-      <div>
+      <div style={{display:'flex', justifyContent:'space-around'}}>
         <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(217, 234, 123, 100)'}}>
           <div className="tarjeta">
               <div className="adelante">
@@ -81,7 +81,7 @@ const CategoriasHome = () => {
       </div>
 
 
-      <div>
+      <div style={{display:'flex', justifyContent:'space-between'}}>
         <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(226, 174, 131, 100)'}}>
           <div className="tarjeta">
               <div className="adelante">

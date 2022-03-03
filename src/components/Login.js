@@ -3,13 +3,8 @@ import { Body } from '../styles/RegistroStyle'
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import "../styles/GoogleBtn.css";
-import {
-  loginGoogle,
-  loginEmailPassword,
-  loginFacebook,
-} from "../redux/actions/actionLogin";
+import { loginGoogle, loginEmailPassword, loginFacebook, } from "../redux/actions/actionLogin";
 import { useNavigate } from "react-router-dom";
-import { Button } from "react-bootstrap";
 import Logo from '../data/images/logo.png'
 
 const Login = () => {
@@ -65,9 +60,9 @@ const Login = () => {
           onChange={formik.handleChange}
         />
         <div className="d-grid gap-2 mx-auto mt-2">
-          <Button value="Save" type="submit" variant="outline-primary">
+          <button value="Save" type="submit" variant="outline-primary">
             Ingresar
-          </Button>
+          </button>
         </div>
         <p>Puedes probar con prueba@prueba.com | 123456</p>
 

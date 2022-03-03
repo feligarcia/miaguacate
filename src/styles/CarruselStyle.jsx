@@ -30,8 +30,7 @@ export const ListaSlider = styled.ul `
         50% {margin-left: -130%;}
         70% {margin-left: -130%;}
         75% {margin-left: -230%;}
-        95% {margin-left: -230%;}
-        100% {margin-left: 0;}
+        100% {margin-left: -230%;}
     } 
 `
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const TarjetaWrap = styled.div `
-    margin: 20px 0;
+    margin: 20px ;
     cursor: pointer;
 
     & .tarjeta {
