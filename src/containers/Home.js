@@ -1,6 +1,7 @@
 import React from 'react'
 import CarruselHome from '../components/CarruselHome'
 import CategoriasHome from '../components/CategoriasHome'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
         <CategoriasHome />
       </div>
 
+    <Footer />
     </div>
     
   )
