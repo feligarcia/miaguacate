@@ -8,6 +8,7 @@ import { PrivateRoutes } from "./PrivateRoutes";
 import PublicRoutes from "./PublicRoutes";
 import { ListRoutes } from "./ListRoutes";
 import NavIni from "../components/NavIni";
+import NavUser from "../components/NavUser";
 
 const AppRouter = () => {
   const [checking, setChecking] = useState(true);
@@ -35,7 +36,8 @@ const AppRouter = () => {
 
   return (
     <div className="App">
-      <HashRouter>
+      <BrowserRouter>
+      <NavUser />
         <NavIni isLogin={isLogin} />
         <Routes>
           <Route
@@ -64,7 +66,7 @@ const AppRouter = () => {
             }
           />
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </div>
   );
 };

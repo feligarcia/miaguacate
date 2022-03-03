@@ -8,4 +8,6 @@ export const types = {
   register: "Register User",
   logout: "Logout User",
   search: "search Pokemon",
+
+  location: 'location User'
 };
