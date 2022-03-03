@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import { Body } from '../styles/RegistroStyle'
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { createUserActionAsincrono } from "../redux/actions/actionLogin";
 import { imgUpload } from "../keys/imgUpload";
 import { useNavigate } from "react-router-dom";
-import { Button } from "react-bootstrap";
 import Logo from '../data/images/logo.png'
 import LogoLogin from "../styles/LogoLogin";
 
@@ -39,7 +39,7 @@ const Registro = () => {
     <div className="divlog">
       <LogoLogin />
       <form className="form-group" onSubmit={formik.handleSubmit}>
-        <label>Nombre</label>
+        {/* <label>Nombre</label> */}
         <input
           id="inputName"
           type="text"
@@ -50,7 +50,7 @@ const Registro = () => {
           required
           onChange={formik.handleChange}
         />
-        <label>Correo electrónico</label>
+        {/* <label>Correo electrónico</label> */}
         <input
           id="inputEmail"
           type="email"
@@ -61,7 +61,7 @@ const Registro = () => {
           required
           onChange={formik.handleChange}
         />
-        <label>Contraseña</label>
+        {/* <label>Contraseña</label> */}
         <input
           id="inputpassword"
           type="password"
@@ -72,7 +72,7 @@ const Registro = () => {
           required
           onChange={formik.handleChange}
         />
-        <label>Imagen para tu perfil</label>
+        <label className="label-file" for="inputImage">Selecciona la imagen para tu perfil</label>
         <input
           id="inputImage"
           type="file"
@@ -84,16 +84,16 @@ const Registro = () => {
         />
         <br></br>
         <div className="d-grid gap-2 mx-auto mt-2">
-          <Button value="Save" type="submit" variant="outline-primary">
+          <button value="Save" type="submit" variant="outline-primary">
             Registrar
-          </Button>
+          </button>
         </div>
         <br></br>
         <h6 onClick={() => navigate("/login")} className="linklogintitle">
-          ¿Ya tienes una cuenta? Haz click aqui
+          ¿Ya tienes una cuenta? <span>Haz click aqui</span>
         </h6>
       </form>
-    </div>
+    </Body>
   );
 };
 

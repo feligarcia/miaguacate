@@ -1,4 +1,5 @@
 import React from "react";
+import { Body } from '../styles/RegistroStyle'
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import "../styles/GoogleBtn.css";
@@ -42,6 +43,7 @@ const Login = () => {
       <form className="form-group" onSubmit={formik.handleSubmit}>
         <label>Correo electrónico</label>
 
+      <form className="form-group" onSubmit={formik.handleSubmit}>
         <input
           id="inputEmailSignIn"
           type="email"
@@ -52,7 +54,6 @@ const Login = () => {
           required
           onChange={formik.handleChange}
         />
-        <label>Contraseña</label>
 
         <input
           id="inputpasswordSignIn"
@@ -64,44 +65,30 @@ const Login = () => {
           required
           onChange={formik.handleChange}
         />
-
-        <br></br>
         <div className="d-grid gap-2 mx-auto mt-2">
           <Button value="Save" type="submit" variant="outline-primary">
             Ingresar
           </Button>
         </div>
         <p>Puedes probar con prueba@prueba.com | 123456</p>
-        <br></br>
 
-        <div className="google-btn" onClick={handleGoogle}>
-          <div className="google-icon-wrapper">
-            <img
-              className="google-icon"
-              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-              alt=""
-            />
-          </div>
-          <p className="btn-text">
-            <b>Entrar con google</b>
-          </p>
+        <div style={{background:'white'}} onClick={handleGoogle} className="handleSocial">
+             <img src="https://img.icons8.com/fluency/30/000000/google-logo.png" alt="login con Google"/>
+              Google
         </div>
-        <br></br>
-      <div className="face-icon">
-        <img
-          onClick={handleFacebook}
-          
-          src="https://scontent.feoh4-3.fna.fbcdn.net/v/t39.2365-6/17639236_1785253958471956_282550797298827264_n.png?_nc_cat=105&ccb=1-5&_nc_sid=ad8a9d&_nc_eui2=AeGuNfqzKUEqyoe9TXtNuhyTDpRKUGl8lBMOlEpQaXyUE0eONNlAaXo9dvUfEaw_MjOGEu0OH1fUkcPG06d-uBV4&_nc_ohc=7OIt3P9C1a4AX8w0tH8&_nc_ht=scontent.feoh4-3.fna&oh=00_AT80QfKiSQ3t8hZWNvUeCROBcCLzim25co5kFo0nb4Xi_g&oe=62216A16"
-          alt=""
-        /></div>
+        
+          <div style={{background: ' #005bb8', color:'white'}} onClick={handleFacebook} className="handleSocial">
+            <img src="https://img.icons8.com/fluency/35/000000/facebook.png" alt="login con Facebook"/>
+              Facebook
+          </div>
         <br></br>
         <br></br>
         <h6 onClick={() => navigate("/registro")} className="linklogintitle">
           {" "}
-          ¿Deseas crear una cuenta? Haz click aqui
+          ¿Deseas crear una cuenta? <span>Haz click aqui</span>
         </h6>
       </form>
-    </div>
+    </Body>
   );
 };
 
