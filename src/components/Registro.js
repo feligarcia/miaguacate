@@ -36,7 +36,7 @@ const Registro = () => {
   };
 
   return (
-    <div className="divlog">
+    <Body className="divlog">
       <LogoLogin />
       <form className="form-group" onSubmit={formik.handleSubmit}>
         {/* <label>Nombre</label> */}
