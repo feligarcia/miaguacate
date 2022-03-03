@@ -6,6 +6,7 @@ import { imgUpload } from "../keys/imgUpload";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import Logo from '../data/images/logo.png'
+import LogoLogin from "../styles/LogoLogin";
 
 const Registro = () => {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ const Registro = () => {
 
   return (
     <div className="divlog">
-      <img alt='' src={Logo} className='logologin'/>
+      <LogoLogin />
       <form className="form-group" onSubmit={formik.handleSubmit}>
         <label>Nombre</label>
         <input

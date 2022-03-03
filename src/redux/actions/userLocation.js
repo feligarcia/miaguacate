@@ -12,7 +12,7 @@ export const locationAsincrono = () => {
             `https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.coords.latitude},${position.coords.longitude}&key=${keygoogle}`
           )
           .then((resp) => {
-            console.log("acesso a ubicacion");
+            console.log(resp);
             dispatch(locationSincro(resp.data.results[0].formatted_address));
           });
       });

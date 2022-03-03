@@ -10,6 +10,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import Logo from '../data/images/logo.png'
+import LogoLogin from "../styles/LogoLogin";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ const Login = () => {
 
   return (
     <div className="divlog">
-      <img alt='' src={Logo} className='logologin'/>
+      <LogoLogin />
       <form className="form-group" onSubmit={formik.handleSubmit}>
         <label>Correo electrónico</label>
 

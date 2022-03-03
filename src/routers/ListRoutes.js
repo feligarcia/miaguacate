@@ -7,7 +7,7 @@ export const ListRoutes = () => {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/" element={<Loader />} />
+        {/* <Route path="/" element={<Loader />} /> */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>

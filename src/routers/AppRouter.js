@@ -37,11 +37,10 @@ const AppRouter = () => {
   return (
     <div className="App">
       <BrowserRouter>
-      <NavUser />
-        <NavIni isLogin={isLogin} />
+        
         <Routes>
           <Route
-            path="/"
+            path="/*"
             element={
               <PrivateRoutes isAuthenticated={isLogin}>
                 <ListRoutes />
