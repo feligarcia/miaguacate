@@ -6,8 +6,9 @@ export const TarjetaWrap = styled.div `
 
     & .tarjeta {
         position: relative;
-        width: 400px;
-        height: 350px;
+        width: 250px;
+        height: 150px;
+        overflow: hidden;
 
         & .adelante, .info {
             position: absolute;

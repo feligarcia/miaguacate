@@ -4,7 +4,9 @@ import Footer from '../components/Footer'
 import NavIni from '../components/NavIni'
 import NavUser from '../components/NavUser'
 
-const CategoriasDetalle = () => {
+const CategoriasDetalle = (e) => {
+
+  console.log(e.target)
   return (
     <div>
 
