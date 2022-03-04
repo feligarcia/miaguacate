@@ -2,6 +2,7 @@ import React from 'react'
 import Footer from '../components/Footer'
 import NavIni from '../components/NavIni'
 import NavUser from '../components/NavUser'
+import TableInver from '../components/TableInver'
 
 const Simulador = () => {
   return (
@@ -9,7 +10,8 @@ const Simulador = () => {
     <div>
         <NavUser />
         <NavIni />
-        Simulador
+       <h1> Simulador </h1>
+        <TableInver />
         <Footer /></div>
   )
 }
