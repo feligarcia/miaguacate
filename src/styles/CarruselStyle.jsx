@@ -16,8 +16,8 @@ export const ListaSlider = styled.ul `
         position: relative;
     }
     & li img {
-        width: 1350px;
-        height: 510px;
+        width: 850px;
+        height: 350px;
         margin: 16px;
         object-fit: cover;
         object-position: top;
