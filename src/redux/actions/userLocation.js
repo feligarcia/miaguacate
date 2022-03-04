@@ -13,7 +13,7 @@ export const locationAsincrono = () => {
           )
           .then((resp) => {
             console.log(resp);
-            dispatch(locationSincro(resp.data.results[0].formatted_address));
+            dispatch(locationSincro(resp.data.results[5].formatted_address));
           });
       });
     }
