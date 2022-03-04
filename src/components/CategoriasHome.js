@@ -12,7 +12,7 @@ const CategoriasHome = () => {
                 </div>
 
                   <div className="info">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>  
+                      <p>Las herramientas como palas, azadones, machetes y otros los puedes encontrar con nuestros mejores proveedores</p>  
                   </div>
             </div>
           </TarjetaWrap>
@@ -24,7 +24,7 @@ const CategoriasHome = () => {
                 </div>
 
                   <div className="info">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>  
+                      <p>Aqui encuentras proveedores de fertilizantes, pesticidas, fungicidas.</p>  
                   </div>
             </div>
           </TarjetaWrap>
@@ -36,7 +36,7 @@ const CategoriasHome = () => {
                 </div>
 
                   <div className="info">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>  
+                      <p>Encuentra aqui información sobre tu financiación con creditos de bancos, cooperativas, subsidios del gobierno.</p>  
                   </div>
             </div>
           </TarjetaWrap>
@@ -50,7 +50,7 @@ const CategoriasHome = () => {
               </div>
 
                 <div className="info">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>  
+                    <p>Encuentra empresas de comercialización para que vendas tus aguacates</p>  
                 </div>
           </div>
         </TarjetaWrap>
@@ -62,7 +62,7 @@ const CategoriasHome = () => {
               </div>
 
                 <div className="info">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>  
+                    <p>Encuentra servicios de empresas y personas para la administración de tu empresa, contabilidad, ingenieros.</p>  
                 </div>
           </div>
         </TarjetaWrap>
@@ -74,7 +74,7 @@ const CategoriasHome = () => {
               </div>
 
                 <div className="info">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>  
+                    <p>Encuentra empresas y personas naturales que te pueden proveer servicios de mano de obra para cada etapa de tu proceso</p>  
                 </div>
           </div>
         </TarjetaWrap>
@@ -89,7 +89,7 @@ const CategoriasHome = () => {
               </div>
 
                 <div className="info">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>  
+                    <p>Encuentra laboratorios para tu hacer control fitosanitario de tu cultivo.</p>  
                 </div>
           </div>
         </TarjetaWrap>
@@ -101,7 +101,7 @@ const CategoriasHome = () => {
               </div>
 
                 <div className="info">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>  
+                    <p>Encuentra información para sacar tu certificación de exportacion GlobalGAP.</p>  
                 </div>
           </div>
         </TarjetaWrap>
@@ -113,7 +113,7 @@ const CategoriasHome = () => {
               </div>
 
                 <div className="info">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>  
+                    <p>Aqui puedes encontrar estudios, libros, mapas y otros recursos bibliograficos.</p>  
                 </div>
           </div>
         </TarjetaWrap>
