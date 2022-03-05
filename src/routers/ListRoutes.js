@@ -1,5 +1,4 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Loader from "../components/Loader";
 import { ModalIni } from "../components/ModalIni";
 import CategoriasDetalle from "../containers/CategoriasDetalle";
 import Cuenta from "../containers/Cuenta";

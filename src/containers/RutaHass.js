@@ -1,7 +1,7 @@
-import React from 'react'
-import Footer from '../components/Footer'
-import NavIni from '../components/NavIni'
-import NavUser from '../components/NavUser'
+import React from "react";
+import Footer from "../components/Footer";
+import NavIni from "../components/NavIni";
+import NavUser from "../components/NavUser";
 
 const RutaHass = () => {
   return (
@@ -10,8 +10,8 @@ const RutaHass = () => {
       <NavIni />
       Roadmap
       <Footer />
-      </div>
-  )
-}
+    </div>
+  );
+};
 
-export default RutaHass
+export default RutaHass;

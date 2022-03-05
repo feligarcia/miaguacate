@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Body } from '../styles/RegistroStyle'
+import { Body } from "../styles/RegistroStyle";
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { createUserActionAsincrono } from "../redux/actions/actionLogin";
 import { imgUpload } from "../keys/imgUpload";
 import { useNavigate } from "react-router-dom";
-import Logo from '../data/images/logo.png'
+import Logo from "../data/images/logo.png";
 import LogoLogin from "../styles/LogoLogin";
 
 const Registro = () => {
@@ -72,7 +72,9 @@ const Registro = () => {
           required
           onChange={formik.handleChange}
         />
-        <label className="label-file" for="inputImage">Selecciona la imagen para tu perfil</label>
+        <label className="label-file" for="inputImage">
+          Selecciona la imagen para tu perfil
+        </label>
         <input
           id="inputImage"
           type="file"
@@ -88,12 +90,11 @@ const Registro = () => {
             Registrar
           </button>
         </div>
-        </form>
-        <br></br>
-        <h6 onClick={() => navigate("/login")} className="linklogintitle">
-          ¿Ya tienes una cuenta? <span>Haz click aqui</span>
-        </h6>
-      
+      </form>
+      <br></br>
+      <h6 onClick={() => navigate("/login")} className="linklogintitle">
+        ¿Ya tienes una cuenta? <span>Haz click aqui</span>
+      </h6>
     </Body>
   );
 };

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Logo from "../data/images/logo.png";
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 
 
  const DivLogoNav = styled.div`
@@ -32,8 +33,9 @@ font-size:26px;
 
 
 function LogoNavCo() {
+  const navigate = useNavigate();
   return (
-    <DivLogoNav>
+    <DivLogoNav onClick={() => navigate("/")}>
 
         <LogoNav></LogoNav>
         <TextLogoNav>miAguacate</TextLogoNav>

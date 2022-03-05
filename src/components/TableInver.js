@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { useTable, usePagination } from "react-table";
+import { Button } from "react-bootstrap";
 
 const Styles = styled.div`
- 
-
   table {
-      width: fit-content;
+    width: fit-content;
     border-spacing: 0;
     border: 1px solid green;
 
@@ -20,7 +19,7 @@ const Styles = styled.div`
 
     th,
     td {
-        width: fit-content;
+      width: fit-content;
       margin: 0;
       padding: 3px;
       border-bottom: 1px solid black;
@@ -31,7 +30,7 @@ const Styles = styled.div`
       }
 
       input {
-          width: 130px;
+        width: 130px;
         font-size: 1rem;
         padding: 0;
         margin: 0;
@@ -242,32 +241,32 @@ const TableInver = () => {
       ano5: 0,
     },
     {
-        item: "Mantenimiento",
-        ano0: 100000,
-        ano1: 500,
-        ano2: 0,
-        ano3: 0,
-        ano4: 0,
-        ano5: 0,
-      },
-      {
-        item: "Plantulas",
-        ano0: 100000,
-        ano1: 500,
-        ano2: 0,
-        ano3: 0,
-        ano4: 0,
-        ano5: 0,
-      },
-      {
-        item: "Mano de obra",
-        ano0: 100000,
-        ano1: 500,
-        ano2: 0,
-        ano3: 0,
-        ano4: 0,
-        ano5: 0,
-      },
+      item: "Mantenimiento",
+      ano0: 100000,
+      ano1: 500,
+      ano2: 0,
+      ano3: 0,
+      ano4: 0,
+      ano5: 0,
+    },
+    {
+      item: "Plantulas",
+      ano0: 100000,
+      ano1: 500,
+      ano2: 0,
+      ano3: 0,
+      ano4: 0,
+      ano5: 0,
+    },
+    {
+      item: "Mano de obra",
+      ano0: 100000,
+      ano1: 500,
+      ano2: 0,
+      ano3: 0,
+      ano4: 0,
+      ano5: 0,
+    },
   ]);
   const [originalData] = React.useState(data);
   const [skipPageReset, setSkipPageReset] = React.useState(false);
@@ -313,7 +312,9 @@ const TableInver = () => {
         updateMyData={updateMyData}
         skipPageReset={skipPageReset}
       />
-      <button onClick={resetData}>Reiniciar tabla</button>
+      <Button variant="warning" onClick={resetData}>
+        Reiniciar tabla
+      </Button>
     </Styles>
   );
 };

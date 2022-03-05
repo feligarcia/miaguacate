@@ -4,10 +4,11 @@ import { Col, Container, Row } from "react-bootstrap";
 import LogoNavCo from "../styles/LogoNavCo";
 
 const DivFooter = styled.footer`
+  margin-top: 40px;
   position: relative;
   bottom: 0;
   background-color: #833403;
-  height: 250px;
+  height: 150px;
 `;
 const Plink = styled.p`
   color: white;
