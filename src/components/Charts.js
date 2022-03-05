@@ -16,43 +16,43 @@ const Charts = () => {
 
   const data = [
     {
-      name: "Page A",
+      name: "Año 0",
       uv: 4000,
       pv: 2400,
       amt: 2400,
     },
     {
-      name: "Page B",
+      name: "Año 1",
       uv: 3000,
       pv: -1398,
       amt: 2210,
     },
     {
-      name: "Page C",
+      name: "Año 2",
       uv: 2000,
       pv: 9800,
       amt: 2290,
     },
     {
-      name: "Page D",
+      name: "Año 3",
       uv: 2780,
       pv: 3908,
       amt: 2000,
     },
     {
-      name: "Page E",
+      name: "Año 4",
       uv: 1890,
       pv: 4800,
       amt: 2181,
     },
     {
-      name: "Page F",
+      name: "Año 5",
       uv: 2390,
       pv: 3800,
       amt: 2500,
     },
     {
-      name: "Page G",
+      name: "Año 6",
       uv: 3490,
       pv: 4300,
       amt: 2100,
