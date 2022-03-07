@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { ModalIni } from "../components/ModalIni";
+import Siembra from "../components/Ruta/Siembra";
 import CategoriasDetalle from "../containers/CategoriasDetalle";
 import Cuenta from "../containers/Cuenta";
 import Home from "../containers/Home";
@@ -11,7 +12,8 @@ export const ListRoutes = () => {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="laruta" element={<RutaHass />} />
+        <Route exact path="laruta" element={<RutaHass />} />
+        <Route  path="laruta/:ruta" element={<Siembra />} />
         <Route path="simulador" element={<Simulador />} />
         <Route path="categorias/:name" element={<CategoriasDetalle />} />
         <Route path="cuenta" element={<Cuenta />} />
