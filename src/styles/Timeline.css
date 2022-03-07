@@ -40,6 +40,9 @@ html {
   .timeline__event__content {
     padding: 20px;
   }
+  .timeline__event:hover{
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.486), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.753);
+  }
   .timeline__event__date {
     color: #f6a4ec;
     font-size: 1.5rem;

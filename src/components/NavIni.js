@@ -14,6 +14,13 @@ import { useFormik } from "formik";
 import { actionSearch } from "../redux/actions/actionSearch";
 import Avatar from "../data/images/avatar.png";
 import { ShowModal } from "../redux/actions/showModal";
+import styled from 'styled-components';
+
+const DivNav = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+`
 
 const NavIni = ({ isLogin }) => {
   const navigate = useNavigate();
@@ -31,12 +38,12 @@ const NavIni = ({ isLogin }) => {
   dispatch(actionSearch(formik.values.search));
 
   return (
-    <div>
+    <>
       <Navbar sticky="top" className="navbarini">
-        <Container>
+       
           <Nav className="me-auto">
             <Nav.Link onClick={() => navigate("/")}>Inicio</Nav.Link>
-            <Nav.Link onClick={() => navigate("/categorias/default")}>
+            <Nav.Link onClick={() => navigate("/categorias/Insumos")}>
               Categorias
             </Nav.Link>
             <Nav.Link onClick={() => navigate("/laruta")}>
@@ -48,10 +55,13 @@ const NavIni = ({ isLogin }) => {
             <Nav.Link onClick={() => dispatch(ShowModal())}>
               Probar Modal
             </Nav.Link>
+            <Nav.Link className='linkcuenta' onClick={() => navigate("/cuenta")}>
+              Cuenta
+            </Nav.Link>
           </Nav>
-        </Container>
+        
       </Navbar>
-    </div>
+    </>
   );
 };
 

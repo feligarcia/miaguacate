@@ -2,10 +2,11 @@ import { types } from "../types/types";
 
 const initialState = {
   roadmap:0,
-  usertype: 'default',
+  usertype: 0,
   search: "",
   lgShow: false,
   location:'',
+  useruid:''
 };
 
 export const appReducer = (state = initialState, action) => {

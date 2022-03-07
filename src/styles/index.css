@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
 
 body {
   margin: 0;
@@ -10,10 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+
 /* Seccion del login */
 
 .face-icon img {
@@ -36,23 +32,36 @@ code {
 }
 
 /* Barra principal de navegacion */
-.icon-avatar{
-  
-  border-style:none;
-/* background-image: url(${Avatar}); */
-   width: 50px;
-   height: 50px;
-   border-radius:50%;
-   background-color: initial;
-   background-repeat: no-repeat;
-   background-size: cover;
+.icon-avatar {
+  border-style: none;
+  /* background-image: url(${Avatar}); */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: initial;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.logonav{
+.logonav {
   width: 50px;
   height: 50px;
 }
 
-
-.navbarini{
-  background-color: #A3E689;
+.navbarini {
+  background-color: #a3e689;
+  height: 50px;
+  padding: 0px;
+}
+.nav-link {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.nav-link:hover {
+  background-color: rgba(255, 240, 130, 0.418);
+}
+.linkcuenta{
+  background-color: rgba(255, 240, 130, 0.931);
+}
+.linkcuenta:hover{
+  background-color: rgb(255, 226, 110);
 }
