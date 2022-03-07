@@ -6,15 +6,17 @@ import NavUser from '../components/NavUser'
 
 const CategoriasDetalle = (e) => {
 
-  console.log(e.target)
+  
+
   return (
     <div>
+        <NavUser />
+        <NavIni />
 
+        CategoriasDetalle
 
-<NavUser />
-<NavIni />
-CategoriasDetalle
         <CategoriasHome />
+
         <Footer />
     </div>
   )
