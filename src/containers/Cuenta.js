@@ -8,6 +8,13 @@ import { Button } from "react-bootstrap";
 import { logoutAsincrono } from "../redux/actions/actionLogin";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { Mapa } from "../components/Mapa";
+import styled from "styled-components";
+
+const DivMapa = styled.div`
+  height: 200px;
+  width: 400px;
+`;
 
 const Cuenta = () => {
   const navigate = useNavigate();
@@ -36,6 +43,9 @@ const Cuenta = () => {
         >
           <InfoUser />
           <br />
+          <DivMapa>
+            <Mapa />
+          </DivMapa>
           <br />
           <Button
             variant="danger"
