@@ -48,7 +48,7 @@ const NavUser = () => {
       <DivSesionUser>
         <DivUserinfo>
           <h3>{displayName}</h3>
-          <h5>Productor - organizar</h5>
+          <h5>Productor</h5>
           <b>{location ? "🏠" + location : null}</b>
         </DivUserinfo>
 
