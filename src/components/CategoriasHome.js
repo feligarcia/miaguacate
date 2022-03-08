@@ -1,5 +1,5 @@
 import React from "react";
-import { TarjetaWrap } from "../styles/CategoriasStyle";
+import { Div, TarjetaWrap } from "../styles/CategoriasStyle";
 import { useNavigate } from "react-router-dom";
 import CategoriasDetalle from "../containers/CategoriasDetalle";
 
@@ -11,25 +11,25 @@ const CategoriasHome = () => {
   };
 
 
-  const handleCategorias = name => {
+  // const handleCategorias = name => {
 
-    useEffect(() => {
-      nameCategoria()
-    }, [name])
+  //   useEffect(() => {
+  //     nameCategoria()
+  //   }, [name])
   
-    navigate('/categorias/:name')
-    const nameCategoria = CategoriasDetalle(name)
+  //   navigate('/categorias/:name')
+  //   const nameCategoria = CategoriasDetalle(name)
 
-  }
+  // }
 
-            <div className="info">
-              <p>
-                Las herramientas como palas, azadones, machetes y otros los
-                puedes encontrar con nuestros mejores proveedores
-              </p>
-            </div>
-          </div>
-        </TarjetaWrap>
+        //     <div className="info">
+        //       <p>
+        //         Las herramientas como palas, azadones, machetes y otros los
+        //         puedes encontrar con nuestros mejores proveedores
+        //       </p>
+        //     </div>
+        //   </div>
+        // </TarjetaWrap>
 
   return (
     <div>
@@ -63,7 +63,7 @@ const CategoriasHome = () => {
             <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(87, 169, 55, 100)'}}>
               <div className="tarjeta">
                   <div className="adelante">
-                      <h2>Financiacion</h2>
+                      <h2>Financiación</h2>
                   </div>
 
                     <div className="info">
@@ -77,7 +77,7 @@ const CategoriasHome = () => {
           <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(217, 234, 123, 100)'}} onClick={() => handleCategorias('Financiación')}>
             <div className="tarjeta">
                 <div className="adelante">
-                    <h2>Comercializacion</h2>
+                    <h2>Comercialización</h2>
                 </div>
 
                   <div className="info">
@@ -89,7 +89,7 @@ const CategoriasHome = () => {
           <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(255, 240, 130, 100)'}} onClick={() => handleCategorias('Comercialización')}>
             <div className="tarjeta">
                 <div className="adelante">
-                    <h2>Administracion</h2>
+                    <h2>Administración</h2>
                 </div>
 
                   <div className="info">
