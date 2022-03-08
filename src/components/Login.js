@@ -1,5 +1,5 @@
 import React from "react";
-import { Body } from '../styles/RegistroStyle'
+import { Body } from "../styles/RegistroStyle";
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import "../styles/GoogleBtn.css";
@@ -9,7 +9,7 @@ import {
   loginFacebook,
 } from "../redux/actions/actionLogin";
 import { useNavigate } from "react-router-dom";
-import Logo from '../data/images/logo.png'
+import Logo from "../data/images/logo.png";
 import LogoLogin from "../styles/LogoLogin";
 
 const Login = () => {
@@ -39,7 +39,6 @@ const Login = () => {
   return (
     <Body className="divlog">
       <LogoLogin />
-     
 
       <form className="form-group" onSubmit={formik.handleSubmit}>
         <input
@@ -68,25 +67,38 @@ const Login = () => {
             Ingresar
           </button>
         </div>
-        </form>
-        <p>Puedes probar con prueba@prueba.com | 123456</p>
+      </form>
+      <p>Puedes probar con prueba@prueba.com | 123456</p>
 
-        <div style={{background:'white'}} onClick={handleGoogle} className="handleSocial">
-             <img src="https://img.icons8.com/fluency/30/000000/google-logo.png" alt="login con Google"/>
-              Google
-        </div>
-        
-          <div style={{background: ' #005bb8', color:'white'}} onClick={handleFacebook} className="handleSocial">
-            <img src="https://img.icons8.com/fluency/35/000000/facebook.png" alt="login con Facebook"/>
-              Facebook
-          </div>
-        <br></br>
-        <br></br>
-        <h6 onClick={() => navigate("/registro")} className="linklogintitle">
-          {" "}
-          ¿Deseas crear una cuenta? <span>Haz click aqui</span>
-        </h6>
-      
+      <div
+        style={{ background: "white" }}
+        onClick={handleGoogle}
+        className="handleSocial"
+      >
+        <img
+          src="https://img.icons8.com/fluency/30/000000/google-logo.png"
+          alt="login con Google"
+        />
+        Google
+      </div>
+
+      <div
+        style={{ background: " #005bb8", color: "white" }}
+        onClick={handleFacebook}
+        className="handleSocial"
+      >
+        <img
+          src="https://img.icons8.com/fluency/35/000000/facebook.png"
+          alt="login con Facebook"
+        />
+        Facebook
+      </div>
+      <br></br>
+      <br></br>
+      <h6 onClick={() => navigate("/registro")} className="linklogintitle">
+        {" "}
+        ¿Deseas crear una cuenta? <span>Haz click aqui</span>
+      </h6>
     </Body>
   );
 };

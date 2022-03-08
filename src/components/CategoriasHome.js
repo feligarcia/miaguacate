@@ -1,11 +1,14 @@
-import React, { useEffect } from 'react'
-import { Div, TarjetaWrap } from '../styles/CategoriasStyle'
+import React from "react";
+import { TarjetaWrap } from "../styles/CategoriasStyle";
 import { useNavigate } from "react-router-dom";
-import CategoriasDetalle from '../containers/CategoriasDetalle'
+import CategoriasDetalle from "../containers/CategoriasDetalle";
 
 const CategoriasHome = () => {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const handleCategorias = (e) => {
+    navigate(`/categorias/${e}`);
+  };
 
 
   const handleCategorias = name => {
@@ -19,6 +22,14 @@ const CategoriasHome = () => {
 
   }
 
+            <div className="info">
+              <p>
+                Las herramientas como palas, azadones, machetes y otros los
+                puedes encontrar con nuestros mejores proveedores
+              </p>
+            </div>
+          </div>
+        </TarjetaWrap>
 
   return (
     <div>
@@ -141,8 +152,7 @@ const CategoriasHome = () => {
       </Div>
 
     </div>
-    
-  )
-}
+  );
+};
 
-export default CategoriasHome
+export default CategoriasHome;

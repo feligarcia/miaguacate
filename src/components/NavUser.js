@@ -1,6 +1,6 @@
 import LogoNavCo from "../styles/LogoNavCo";
 import React, { useEffect } from "react";
-import {  Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Avatar from "../data/images/avatar.png";
@@ -21,8 +21,7 @@ const DivUserinfo = styled.div`
   justify-content: flex-start;
 
   & h5 {
-    
-    color: #7B421B;
+    color: #7b421b;
     font-weight: 600;
   }
 `;
@@ -53,24 +52,26 @@ const NavUser = () => {
           <b>{location ? "🏠" + location : null}</b>
         </DivUserinfo>
 
-        {
-          uid ? (
-            <>
-              <img
-                alt=""
-                src={getUserLocalST ? photoURL : Avatar}
-                className="icon-avatar"
-                onClick={() => navigate("/cuenta")}
-                style={{width:'80px', height:'80px', margin:'10px', objectFit:'cover'}}
-                />
-            </>
-          ) 
-          : (
-            <Button variant="primary" onClick={() => navigate("/login")}>
-              Ingresar
-            </Button>
-          )
-        }
+        {uid ? (
+          <>
+            <img
+              alt=""
+              src={getUserLocalST ? photoURL : Avatar}
+              className="icon-avatar"
+              onClick={() => navigate("/cuenta")}
+              style={{
+                width: "80px",
+                height: "80px",
+                margin: "10px",
+                objectFit: "cover",
+              }}
+            />
+          </>
+        ) : (
+          <Button variant="primary" onClick={() => navigate("/login")}>
+            Ingresar
+          </Button>
+        )}
       </DivSesionUser>
     </DivNavUser>
   );

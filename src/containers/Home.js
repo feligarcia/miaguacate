@@ -1,10 +1,10 @@
-import React from 'react'
-import CarruselHome from '../components/CarruselHome'
-import CategoriasHome from '../components/CategoriasHome'
-import Footer from '../components/Footer'
-import NavIni from '../components/NavIni'
-import NavUser from '../components/NavUser'
-import {ModalIni} from '../components/ModalIni'
+import React from "react";
+import CarruselHome from "../components/CarruselHome";
+import CategoriasHome from "../components/CategoriasHome";
+import Footer from "../components/Footer";
+import NavIni from "../components/NavIni";
+import NavUser from "../components/NavUser";
+import { ModalIni } from "../components/ModalIni";
 
 const Home = () => {
   return (
@@ -14,14 +14,13 @@ const Home = () => {
       <CarruselHome />
 
       <div>
-        <h2 style={{margin:'10px 50px'}}>Categorias por buscar</h2>
+        <h2 style={{ margin: "10px 50px" }}>Categorias por buscar</h2>
         <CategoriasHome />
       </div>
       <Footer />
       <ModalIni />
     </div>
-    
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

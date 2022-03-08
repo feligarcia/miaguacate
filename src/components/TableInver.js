@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { useTable, usePagination } from "react-table";
+import { Button } from "react-bootstrap";
 
 const Styles = styled.div`
- 
-
+  width: 50%;
   table {
-      width: fit-content;
+    /* margin: 0 30px;
+    width: 80%; */
     border-spacing: 0;
     border: 1px solid green;
 
@@ -20,18 +21,18 @@ const Styles = styled.div`
 
     th,
     td {
-        width: fit-content;
+      width: 50%;
       margin: 0;
       padding: 3px;
       border-bottom: 1px solid black;
       border-right: 1px solid yellow;
 
       :last-child {
+        width: 50%;
         border-right: 0;
       }
 
       input {
-          width: 130px;
         font-size: 1rem;
         padding: 0;
         margin: 0;
@@ -225,6 +226,10 @@ const TableInver = () => {
             Header: "Año 4",
             accessor: "ano4",
           },
+          {
+            Header: "Año 5",
+            accessor: "ano5",
+          },
         ],
       },
     ],
@@ -242,32 +247,32 @@ const TableInver = () => {
       ano5: 0,
     },
     {
-        item: "Mantenimiento",
-        ano0: 100000,
-        ano1: 500,
-        ano2: 0,
-        ano3: 0,
-        ano4: 0,
-        ano5: 0,
-      },
-      {
-        item: "Plantulas",
-        ano0: 100000,
-        ano1: 500,
-        ano2: 0,
-        ano3: 0,
-        ano4: 0,
-        ano5: 0,
-      },
-      {
-        item: "Mano de obra",
-        ano0: 100000,
-        ano1: 500,
-        ano2: 0,
-        ano3: 0,
-        ano4: 0,
-        ano5: 0,
-      },
+      item: "Mantenimiento",
+      ano0: 100000,
+      ano1: 500,
+      ano2: 0,
+      ano3: 0,
+      ano4: 0,
+      ano5: 0,
+    },
+    {
+      item: "Plantulas",
+      ano0: 100000,
+      ano1: 500,
+      ano2: 0,
+      ano3: 0,
+      ano4: 0,
+      ano5: 0,
+    },
+    {
+      item: "Mano de obra",
+      ano0: 100000,
+      ano1: 500,
+      ano2: 0,
+      ano3: 0,
+      ano4: 0,
+      ano5: 0,
+    },
   ]);
   const [originalData] = React.useState(data);
   const [skipPageReset, setSkipPageReset] = React.useState(false);
@@ -304,7 +309,7 @@ const TableInver = () => {
   // Let's add a data resetter/randomizer to help
   // illustrate that flow...
   const resetData = () => setData(originalData);
-
+  console.log(data);
   return (
     <Styles>
       <Table
@@ -313,7 +318,9 @@ const TableInver = () => {
         updateMyData={updateMyData}
         skipPageReset={skipPageReset}
       />
-      <button onClick={resetData}>Reiniciar tabla</button>
+      <Button variant="warning" onClick={resetData}>
+        Reiniciar tabla
+      </Button>
     </Styles>
   );
 };
