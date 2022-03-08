@@ -32,7 +32,10 @@ const InfoUser = () => {
       </div>
 
       <h3>{displayName}</h3>
-      <b>{location ? "🏠" + location : null}</b>
+      <b>Ubicación actual: {location ? "🏠" + location : null}</b>
+      <h4>Productor</h4>
+      <h5>Nombre finca: Mi Guadalupe</h5>
+      <h5>Ubicación finca: Guarne, Antioquia</h5>
     </div>
   );
 };

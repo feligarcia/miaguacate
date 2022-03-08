@@ -38,7 +38,7 @@ const CategoriasDetalle = () => {
         <h1>{params.name}</h1>
         <br></br>
         <input type="text"></input>
-        <Button variant="info">Buscar</Button>
+        <Button variant="warning">Buscar</Button>
         <br></br>
         <b>{location ? "🏠" + location : null}</b>
 
@@ -47,18 +47,21 @@ const CategoriasDetalle = () => {
             <h1>Agronegocios Don JuanCarlos</h1>
             <p>Cel. 3007878790</p>
           </DivDes>
+          <p>lon:75.000,lat:-45.123</p>
         </DivItemBus>
         <DivItemBus className="list-group-item">
           <DivDes>
             <h1>Viveros Mi Guadua</h1>
             <p>Cel. 3029191919</p>
           </DivDes>
+          <p>lon:75.000,lat:-45.123</p>
         </DivItemBus>
         <DivItemBus className="list-group-item">
           <DivDes>
             <h1>Ferreteria La Abundancia</h1>
             <p>Cel. 6042019281</p>
           </DivDes>
+          <p>lon:75.000,lat:-45.123</p>
         </DivItemBus>
       </DivLista>
       <CategoriasHome />

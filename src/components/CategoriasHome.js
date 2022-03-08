@@ -18,7 +18,7 @@ const CategoriasHome = () => {
         <TarjetaWrap
           className="TarjetaWrap"
           style={{ background: "rgba(0, 189, 93, 0.39)" }}
-          onClick={() => handleCategorias("herramientas y maquinaria")}
+          onClick={() => handleCategorias("Herramientas y maquinaria")}
         >
           <div className="tarjeta">
             <div className="adelante">
@@ -37,7 +37,7 @@ const CategoriasHome = () => {
         <TarjetaWrap
           className="TarjetaWrap"
           style={{ background: "rgba(163, 230, 137, 100)" }}
-          onClick={() => handleCategorias("insumos")}
+          onClick={() => handleCategorias("Insumos")}
         >
           <div className="tarjeta">
             <div className="adelante">
@@ -56,7 +56,7 @@ const CategoriasHome = () => {
         <TarjetaWrap
           className="TarjetaWrap"
           style={{ background: "rgba(87, 169, 55, 100)" }}
-          onClick={() => handleCategorias("financiacion")}
+          onClick={() => handleCategorias("Financiación")}
         >
           <div className="tarjeta">
             <div className="adelante">
@@ -77,7 +77,7 @@ const CategoriasHome = () => {
         <TarjetaWrap
           className="TarjetaWrap"
           style={{ background: "rgba(217, 234, 123, 100)" }}
-          onClick={() => handleCategorias("comercializacion")}
+          onClick={() => handleCategorias("Comercialización")}
         >
           <div className="tarjeta">
             <div className="adelante">
@@ -96,7 +96,7 @@ const CategoriasHome = () => {
         <TarjetaWrap
           className="TarjetaWrap"
           style={{ background: "rgba(255, 240, 130, 100)" }}
-          onClick={() => handleCategorias("administracion")}
+          onClick={() => handleCategorias("Administración")}
         >
           <div className="tarjeta">
             <div className="adelante">
@@ -115,7 +115,7 @@ const CategoriasHome = () => {
         <TarjetaWrap
           className="TarjetaWrap"
           style={{ background: "rgba(255, 226, 110, 100)" }}
-          onClick={() => handleCategorias("manodeobra")}
+          onClick={() => handleCategorias("Mano de obra")}
         >
           <div className="tarjeta">
             <div className="adelante">
@@ -136,7 +136,7 @@ const CategoriasHome = () => {
         <TarjetaWrap
           className="TarjetaWrap"
           style={{ background: "rgba(226, 174, 131, 100)" }}
-          onClick={() => handleCategorias("controlfito")}
+          onClick={() => handleCategorias("Control Fitosanitario")}
         >
           <div className="tarjeta">
             <div className="adelante">
@@ -155,7 +155,7 @@ const CategoriasHome = () => {
         <TarjetaWrap
           className="TarjetaWrap"
           style={{ background: "rgba(213, 141, 73, 100)" }}
-          onClick={() => handleCategorias("certificaciones")}
+          onClick={() => handleCategorias("Certificaciones")}
         >
           <div className="tarjeta">
             <div className="adelante">
@@ -174,7 +174,7 @@ const CategoriasHome = () => {
         <TarjetaWrap
           className="TarjetaWrap"
           style={{ background: "rgba(200, 110, 55, 100)" }}
-          onClick={() => handleCategorias("estudios")}
+          onClick={() => handleCategorias("Estudios y mapas")}
         >
           <div className="tarjeta">
             <div className="adelante">

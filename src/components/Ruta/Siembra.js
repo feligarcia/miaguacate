@@ -31,13 +31,33 @@ const Siembra = () => {
         </div>
       </div>
       <BORRAR></BORRAR>
-      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-  <input type="radio" class="btn-check" name="btnfincap" id="btnfincapF" autocomplete="off"  />
-  <label class="btn btn-outline-success" for="btnfincapF">Finalizado</label>
-  <input type="radio" class="btn-check" name="btnfincap" id="btnfincapP" autocomplete="off" checked/>
-  <label class="btn btn-outline-secondary" for="btnfincapP">Pendiente</label>
-
-</div>
+      <div
+        class="btn-group"
+        role="group"
+        aria-label="Basic radio toggle button group"
+      >
+        <input
+          type="radio"
+          class="btn-check"
+          name="btnfincap"
+          id="btnfincapF"
+          autocomplete="off"
+        />
+        <label class="btn btn-outline-success" for="btnfincapF">
+          Finalizado
+        </label>
+        <input
+          type="radio"
+          class="btn-check"
+          name="btnfincap"
+          id="btnfincapP"
+          autocomplete="off"
+          checked
+        />
+        <label class="btn btn-outline-secondary" for="btnfincapP">
+          Pendiente
+        </label>
+      </div>
       <Footer />
     </>
   );

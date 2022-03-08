@@ -19,7 +19,7 @@ const DivResults = styled.div`
   justify-content: center;
 `;
 const DivTarjeta = styled.div`
-margin:3px;
+  margin: 3px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,42 +41,42 @@ const Simulador = () => {
             style={{ background: "rgba(0, 189, 93, 0.39)" }}
           >
             <p>Valor por ha:</p>
-            <h4>xxvalor</h4>
+            <h4>25.000.000</h4>
           </DivTarjeta>
           <DivTarjeta
             className="tarjeta"
             style={{ background: "rgba(163, 230, 137, 100)" }}
           >
             <p>Inversión total</p>
-            <h4>xxvalor</h4>
+            <h4>250.000.000</h4>
           </DivTarjeta>
           <DivTarjeta
             className="tarjeta"
             style={{ background: "rgba(87, 169, 55, 100)" }}
           >
             <p>TIR</p>
-            <h4>yyy%</h4>
+            <h4>10%</h4>
           </DivTarjeta>
           <DivTarjeta
             className="tarjeta"
             style={{ background: "rgba(217, 234, 123, 100)" }}
           >
             <p>VPN</p>
-            <h4>yyy%</h4>
+            <h4>Calcular%</h4>
           </DivTarjeta>
           <DivTarjeta
             className="tarjeta"
             style={{ background: "rgba(255, 226, 110, 100)" }}
           >
             <p>VPN</p>
-            <h4>yyy%</h4>
+            <h4>Calcular%</h4>
           </DivTarjeta>
           <DivTarjeta
             className="tarjeta"
             style={{ background: "rgba(255, 240, 130, 100)" }}
           >
             <p>Equilibrio</p>
-            <h4>YYYYaño</h4>
+            <h4>3,5años</h4>
           </DivTarjeta>
         </DivResults>
       </DivSimu>
