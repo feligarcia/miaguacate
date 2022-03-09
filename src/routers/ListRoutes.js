@@ -7,6 +7,11 @@ import Cuenta from "../containers/Cuenta";
 import Home from "../containers/Home";
 import RutaHass from "../containers/RutaHass";
 import Simulador from "../containers/Simulador";
+import Noticias from "../containers/Noticias";
+import Noticia1 from "../components/noticias/Noticia1";
+import Noticia2 from "../components/noticias/Noticia2";
+import Noticia3 from "../components/noticias/Noticia3";
+import Noticia4 from "../components/noticias/Noticia4";
 
 export const ListRoutes = () => {
   return (
@@ -20,6 +25,11 @@ export const ListRoutes = () => {
         <Route path="categorias/:name/:id" element={<DetalleProveedor />} />
         <Route path="cuenta" element={<Cuenta />} />
         <Route path="encuesta" element={<ModalIni />} />
+        <Route path="/noticias" element={<Noticias />} />
+        <Route path="/noticias/noticia1" element={<Noticia1 />} />
+        <Route path="/noticias/noticia2" element={<Noticia2 />} />
+        <Route path="/noticias/noticia3" element={<Noticia3 />} />
+        <Route path="/noticias/noticia4" element={<Noticia4 />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>

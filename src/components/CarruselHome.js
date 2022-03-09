@@ -4,41 +4,73 @@ import {
   ListaSlider,
   MenuSlider,
 } from "../styles/CarruselStyle";
+import { noticias } from '../data/dbNoticias'
+import { useNavigate } from 'react-router-dom';
+
 
 const CarruselHome = () => {
+
+  const navigate = useNavigate()
+  
   return (
     <div>
       <header>
         <ContainerSlider>
           <ListaSlider>
-            <li id="slide1">
+            <li id="slide1" onClick={() => navigate("/noticias/noticia1")}>
               <img
-                src="https://res.cloudinary.com/dvtpbvs4w/image/upload/v1646319703/Demoday/slider4_e4cb4t.jpg"
+                src={noticias[0].img}
                 alt="img de aguacate"
               />
+              <div>
+                <h4>
+                  {noticias[0].titulo}
+                </h4>
+              </div>
             </li>
 
-            <li id="slide2">
+            <li id="slide2" onClick={() => navigate("/noticias/noticia2")}>
               <img
-                src="https://res.cloudinary.com/dvtpbvs4w/image/upload/v1646319702/Demoday/slider2_ocj2uh.jpg"
+                src={noticias[1].img}
                 alt="img de aguacate"
               />
+
+              <div>
+                <h4>
+                  {noticias[1].titulo}
+                </h4>
+              </div>
+
             </li>
 
-            <li id="slide3">
+            <li id="slide3" onClick={() => navigate("/noticias/noticia3")}>
               <img
-                src="https://res.cloudinary.com/dvtpbvs4w/image/upload/v1646319702/Demoday/slider3_xbl67b.jpg"
+                src={noticias[2].img}
                 alt="img de aguacate"
               />
+
+              <div>
+                <h4>
+                  {noticias[2].titulo}
+                </h4>
+              </div>
             </li>
 
-            <li id="slide4">
+            <li id="slide4" onClick={() => navigate("/noticias/noticia4")}>
               <img
-                src="https://res.cloudinary.com/dvtpbvs4w/image/upload/v1646319703/Demoday/slider4_e4cb4t.jpg"
+                src={noticias[3].img}
                 alt="img de aguacate"
               />
+
+              <div>
+                <h4>
+                  {noticias[3].titulo}
+                </h4>
+              </div>
             </li>
           </ListaSlider>
+            
+          
         </ContainerSlider>
 
         <MenuSlider>

@@ -14,6 +14,7 @@ export const ListaSlider = styled.ul `
         width: 100%;
         list-style: none;
         position: relative;
+        cursor: pointer;
     }
     & li img {
         width: 850px;
@@ -21,16 +22,35 @@ export const ListaSlider = styled.ul `
         margin: 16px;
         object-fit: cover;
         object-position: top;
+        position: relative ;
+    }
+
+    & li div {
+        background: #0e0d0db1;
+        color: white;
+        text-align: center;
+        width: 850px;
+        height: 80px;
+        position: absolute ;
+        bottom:15px;
+        left: 15px;
+
+        & h4 {
+            width: 840px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
     }
     @keyframes cambio {
-        0% {margin-left: 5%;}
-        20% {margin-left: 5%;}
-        25% {margin-left: -65%;}
-        45% {margin-left: -65%;}
-        50% {margin-left: -140%;}
-        70% {margin-left: -140%;}
-        75% {margin-left: -220%;}
-        100% {margin-left: -220%;}
+        0% {margin-left: 20%;}
+        20% {margin-left: 20%;}
+        25% {margin-left: -30%;}
+        45% {margin-left: -30%;}
+        50% {margin-left: -80%;}
+        70% {margin-left: -80%;}
+        75% {margin-left: -180%;}
+        100% {margin-left: -180%;}
     } 
 `
 

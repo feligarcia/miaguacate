@@ -46,6 +46,9 @@ const NavIni = ({ isLogin }) => {
             <Nav.Link onClick={() => navigate("/categorias/Insumos")}>
               Categorias
             </Nav.Link>
+            <Nav.Link onClick={() => navigate("/noticias")}>
+              Noticias
+            </Nav.Link>
             <Nav.Link onClick={() => navigate("/laruta")}>
               La ruta del aguacate
             </Nav.Link>

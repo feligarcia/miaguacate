@@ -2,31 +2,21 @@ import { Modal } from "react-bootstrap";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { CloseModal } from "../redux/actions/showModal";
+import { Button } from "react-bootstrap";
 
-const DivImg = styled.div`
-  margin: 5%;
+const DivInt = styled.div`
+  /* width: 50px; */
+  margin: 50px;
   background-color: transparent;
 `;
 
-const ImgDes = styled.img`
+const ImgDes = styled.div`
   width: 220px;
   height: 200px;
   transform: skewX(25deg) rotate(330deg) translateX(-25px);
 `;
-const Pdata = styled.p`
-  color: #a7a9be;
-  font-size: 18px;
-  line-height: 27px;
-`;
-const DivBtnModal = styled.div`
-  display: flex;
-  flex-direction: row;
-  max-height: 53px;
-  height: 15%;
-  background-color: transparent;
-`;
-const DivDescription = styled.div`
 
+const DivDescription = styled.div`
   display: flex;
   flex-direction: column;
   background-color: transparent;
@@ -39,60 +29,57 @@ export const ModalIni = () => {
   return (
     <>
       <Modal
-        size="lg"
+        // size="sm"
         show={lgShow}
         onHide={() => dispatch(CloseModal())}
         aria-labelledby="example-modal-sizes-title-lg"
         className="modal"
       >
         <DivDescription>
-          <div class="form-check form-switch">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="flexSwitchCheckDefault"
-            />
-            <label class="form-check-label" for="flexSwitchCheckDefault">
-              Default switch checkbox input
-            </label>
-          </div>
-          <div class="form-check form-switch">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="flexSwitchCheckChecked"
-              checked
-            />
-            <label class="form-check-label" for="flexSwitchCheckChecked">
-              Checked switch checkbox input
-            </label>
-          </div>
-          <div class="form-check form-switch">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="flexSwitchCheckDisabled"
-              disabled
-            />
-            <label class="form-check-label" for="flexSwitchCheckDisabled">
-              Disabled switch checkbox input
-            </label>
-          </div>
-          <div class="form-check form-switch">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="flexSwitchCheckCheckedDisabled"
-              checked
-              disabled
-            />
-            <label
-              class="form-check-label"
-              for="flexSwitchCheckCheckedDisabled"
-            >
-              Disabled checked switch checkbox input
-            </label>
-          </div>
+          <DivInt>
+            <h2>Queremos conocer tu perfil.</h2>
+            <p>
+              Necesitamos que respondas unas preguntas relacionadas con tu
+              perfil para brindarte la mejor experiencia de usuario.
+            </p>
+            <form>
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="check1"
+              />
+              <label class="form-check-label" for="check1">
+                ¿Tienes un terreno propio o alquilado para siembra?
+              </label>
+            </div>
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="check2"
+                
+              />
+              <label class="form-check-label" for="check2">
+                ¿Tienes conocimiento sobre el cultivo de aguacate?
+              </label>
+            </div>
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="check3"
+                
+              />
+              <label class="form-check-label" for="check3">
+                ¿Cuentas con recursos propios o creditos?
+              </label>
+            </div>
+            </form>
+           
+          <br></br>
+            <Button variant="success">Continuar</Button>
+          </DivInt>
         </DivDescription>
       </Modal>
     </>
