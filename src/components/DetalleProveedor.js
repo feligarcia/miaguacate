@@ -51,15 +51,15 @@ const DetalleProveedor = () => {
     <div>
         <NavUser />
         <NavIni />
-        <h1>Detalle proveedor</h1>
+        {/* <h1>Detalle proveedor</h1> */}
 
       <Div>
         <div className="flex">
             <div className="perfil-proveedor">
               <img className="foto-proveedor" src="https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg" alt="foto del proveedor"/>
-              <h4>Nombre</h4>
-              <h4>Tipo de servicio</h4>
-              <h4>Contacto</h4>
+              <h4>Agronegocios Don JuanCarlos</h4>
+              <h4>Insumos</h4>
+              <h4>Cel. 3007878790</h4>
             </div>
 
             <div className="negocio-proveedor">
