@@ -2,6 +2,9 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import DetalleProveedor from "../components/DetalleProveedor";
 import { ModalIni } from "../components/ModalIni";
 import Siembra from "../components/Ruta/Siembra";
+import Aguacate from "../components/Ruta/Aguacate";
+import Terreno from "../components/Ruta/Terreno";
+import Mantenimiento from "../components/Ruta/Mantenimiento";
 import CategoriasDetalle from "../containers/CategoriasDetalle";
 import Cuenta from "../containers/Cuenta";
 import Home from "../containers/Home";
@@ -19,7 +22,10 @@ export const ListRoutes = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route exact path="laruta" element={<RutaHass />} />
-        <Route path="laruta/:ruta" element={<Siembra />} />
+        <Route path="laruta/siembra" element={<Siembra />} />
+        <Route path="laruta/aguacate" element={<Aguacate />} />
+        <Route path="laruta/terreno" element={<Terreno />} />
+        <Route path="laruta/mantenimiento" element={<Mantenimiento />} />
         <Route path="simulador" element={<Simulador />} />
         <Route path="categorias/:name" element={<CategoriasDetalle />} />
         <Route path="categorias/:name/:id" element={<DetalleProveedor />} />

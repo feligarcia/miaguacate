@@ -8,39 +8,41 @@ const Noticia1 = () => {
   const navigate = useNavigate();
 
   const Body = styled.div `
-
+      background: rgba(163, 230, 137, 50);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
-    & header {
-      width: 90px;
-      height: 90px;
+      
+      & .main {
+      background: white;
+      margin: 50px 0;
       display: flex;
+      position: relative;
       justify-content: center;
-      align-items: center;
-      position: absolute;
-      top: 15px;
-      left: 300px;
-      color: rgba(0, 189, 93, 1);
-      cursor: pointer;
 
-      & :hover {
-        color: rgba(0, 129, 93, 1);
-      }
-
-      & h2 {
-        display: flex;
-        align-items: center;
-        font-size: 16px;
-      }
-    }
-
-
-    & main {
-      display: flex;
-      justify-content: center;
+        & header {
+          width: 90px;
+          height: 90px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 5px;
+          left: 0;
+          color: rgba(0, 189, 93, 1);
+          cursor: pointer;
+    
+          & :hover {
+            color: rgba(0, 129, 93, 1);
+          }
+    
+          & h2 {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+          }
+        }
 
       
       & div {
@@ -68,6 +70,7 @@ const Noticia1 = () => {
 
             & p {
               font-size: 22px;
+              margin-bottom: 50px;
             }
           }
       }
@@ -79,6 +82,9 @@ const Noticia1 = () => {
   return (
     <Body>
       
+
+      <div className="main">
+
       <header>
         <h2 onClick={() => navigate("/noticias")}> 
           <svg width="35" height="35" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
@@ -89,7 +95,6 @@ const Noticia1 = () => {
         </h2>
       </header>
 
-      <main>
         <div>
           <h1> {noticias[0].titulo} </h1>
           
@@ -99,7 +104,7 @@ const Noticia1 = () => {
             </div>
             
         </div>
-      </main>
+      </div>
 
     </Body>
   )
