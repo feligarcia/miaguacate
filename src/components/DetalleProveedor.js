@@ -6,7 +6,8 @@ const DetalleProveedor = () => {
   return (
     <div>
         <NavUser />
-      <NavIni />
+        <NavIni />
+        <h1>Detalle proveedor</h1>
     </div>
   )
 }
