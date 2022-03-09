@@ -20,6 +20,8 @@ html {
     width: 50vw;
     margin: 5% auto;
   }
+
+  /* sombrita */
   .timeline__event {
     background: #fff;
     margin-bottom: 20px;
@@ -29,29 +31,37 @@ html {
     border-radius: 8px;
     box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
   }
+
+  /* Titulo */
   .timeline__event__title {
     font-size: 1.2rem;
     line-height: 1.4;
     text-transform: uppercase;
     font-weight: 600;
-    color: #9251ac;
+    color: rgba(2, 153, 78, 0.945);
     letter-spacing: 1.5px;
   }
   .timeline__event__content {
     padding: 20px;
   }
+
+  /* sombra hover */
   .timeline__event:hover{
     box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.486), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.753);
   }
+  
+  /* Numerito de los morados */
   .timeline__event__date {
-    color: #f6a4ec;
+    color: rgba(0, 189, 93, 100);
     font-size: 1.5rem;
     font-weight: 600;
     white-space: nowrap;
   }
+
+  /* Fondo de los morados */
   .timeline__event__icon {
     border-radius: 8px 0 0 8px;
-    background: #9251ac;
+    background: rgba(0, 189, 93, 0.39);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,7 +69,9 @@ html {
     font-size: 2rem;
     color: #9251ac;
     padding: 20px;
+    cursor: pointer;
   }
+
   .timeline__event__icon i {
     position: absolute;
     top: 50%;
@@ -67,68 +79,206 @@ html {
     font-size: 2.5rem;
     transform: translateY(-50%);
   }
+  
   .timeline__event__description {
     flex-basis: 60%;
+    cursor: pointer;
   }
+  
   .timeline__event:after {
     content: "";
     width: 2px;
     height: 100%;
-    background: #9251ac;
+    background: #24ad68b4;
     position: absolute;
     top: 52%;
     left: -3.5rem;
     z-index: -1;
   }
+  
+  /* Icono del morado */
   .timeline__event:before {
     content: "";
     width: 5rem;
     height: 5rem;
     position: absolute;
-    background: #f6a4ec;
+    background: #cfffcf;
     border-radius: 100%;
     left: -6rem;
     top: 50%;
     transform: translateY(-50%);
-    border: 2px solid #9251ac;
+    border: 2px solid #24ad80b4;
   }
+  
+  /* El 2 */
+  /* Icono del verde */
   .timeline__event--type2:before {
-    background: #87bbfe;
-    border-color: #555ac0;
+    background: #cfffcf;
+    border-color: #26a751b4;
   }
+
+  /* Linea entre el 2 y el 3 */
   .timeline__event--type2:after {
-    background: #555ac0;
+    background: #25ad4eb4;
   }
+  
+  /* Numero del 2 azul */
   .timeline__event--type2 .timeline__event__date {
-    color: #87bbfe;
+    color: rgba(103, 200, 117, 100);
   }
+  
+  /*  background del numerito */
   .timeline__event--type2 .timeline__event__icon {
-    background: #A3E689;
+    background: rgba(163, 230, 137, 100);
     color: #ffffff;
   }
+
+  /* Titulo del 2 */
   .timeline__event--type2 .timeline__event__title {
-    color: #555ac0;
+    color: rgba(80, 180, 100, 100);
   }
+
+  /* el 3 */
   .timeline__event--type3:before {
-    background: #aff1b6;
-    border-color: #A3E689;
+    background: #cfffcf;
+    border-color: #47851eb4;
   }
+
+  /* Linea entre el 2 y el 3 */
   .timeline__event--type3:after {
-    background: rgba(163, 230, 137, 100);
+    background: #509720b4;
   }
+  
+  /* Numero del 2 azul */
   .timeline__event--type3 .timeline__event__date {
-    color: #aff1b6;
+    color: rgba(89, 129, 25, 0.699);
   }
+  
+  /*  background del numerito */
   .timeline__event--type3 .timeline__event__icon {
-    background: #24b47e;
-    color: #24b47e;
+    background: rgba(131, 190, 36, 0.699);
+    color: #ffffff;
   }
+
+  /* Titulo del 2 */
   .timeline__event--type3 .timeline__event__title {
-    color: #24b47e;
+    color: rgba(80, 180, 100, 100);
   }
-  .timeline__event:last-child:after {
-    content: none;
+
+
+  /*  el 4 */
+
+  .timeline__event--type4:before {
+    background: #cfffcf;
+    border-color: #a19f24b7;
   }
+
+  /* Linea entre el 3 y el 4 */
+  .timeline__event--type4:after {
+    background: rgb(245, 241, 5)b4;
+  }
+  
+  /* Numero del 3 */
+  .timeline__event--type4 .timeline__event__date {
+    color: rgba(103, 200, 117, 100);
+  }
+  
+  /*  background del numerito */
+  .timeline__event--type4 .timeline__event__icon {
+    background: rgba(217, 234, 123, 100);
+    color: #ffffff;
+  }
+
+  /* Titulo del 2 */
+  .timeline__event--type4 .timeline__event__title {
+    color: rgba(80, 180, 100, 100);
+  }
+
+
+  /* El 5 */
+
+  .timeline__event--type5:before {
+    background: #cfffcf;
+    border-color: #a39729cb;
+  }
+
+  /* Linea entre el 3 y el 4 */
+  .timeline__event--type5:after {
+    background: #c9cc17b4;
+  }
+  
+  /* Numero del 3 */
+  .timeline__event--type5 .timeline__event__date {
+    color: rgba(103, 200, 117, 100);
+  }
+  
+  /*  background del numerito */
+  .timeline__event--type5 .timeline__event__icon {
+    background: rgba(255, 226, 110, 100);
+    color: #ffffff;
+  }
+
+  /* Titulo del 2 */
+  .timeline__event--type5 .timeline__event__title {
+    color: rgba(175, 146, 30, 100);
+  }
+
+  /* El 6 */
+
+  .timeline__event--type6:before {
+    background: #cfffcf;
+    border-color: #d18c31b4;
+  }
+
+  /* Linea entre el 3 y el 4 */
+  .timeline__event--type6:after {
+    background: #8d6e18b4;
+  }
+  
+  /* Numero del 3 */
+  .timeline__event--type6 .timeline__event__date {
+    color: rgba(113, 41, 73, 100);
+  }
+  
+  /*  background del numerito */
+  .timeline__event--type6 .timeline__event__icon {
+    background: rgba(213, 141, 73, 100);
+    color: #ffffff;
+  }
+
+  /* Titulo del 2 */
+  .timeline__event--type6 .timeline__event__title {
+    color: #db810a;
+  }
+
+  /* El 7 */
+
+  .timeline__event--type7:before {
+    background: #cfffcf;
+    border-color: #a85626b4;
+  }
+
+  /* Linea entre el 3 y el 4 */
+  .timeline__event--type7:after {
+    background: none;
+  }
+  
+  /* Numero del 3 */
+  .timeline__event--type7 .timeline__event__date {
+    color: rgba(113, 41, 73, 100);
+  }
+  
+  /*  background del numerito */
+  .timeline__event--type7 .timeline__event__icon {
+    background: rgba(200, 110, 55, 100);
+    color: #ffffff;
+  }
+
+  /* Titulo del 2 */
+  .timeline__event--type7 .timeline__event__title {
+    color: rgba(180, 90, 35, 100);
+  }
+
   
   @media (max-width: 786px) {
     .timeline__event {

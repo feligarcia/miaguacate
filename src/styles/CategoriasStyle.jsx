@@ -1,12 +1,20 @@
 import styled from 'styled-components';
 
+export const Div = styled.div `
+    & .line-tarjeta {
+        display: flex; 
+        justify-content: center;
+        text-align: center;
+    }
+`
+
 export const TarjetaWrap = styled.div `
     margin: 5px;
     cursor: pointer;
 
     & .tarjeta {
         position: relative;
-        width: 250px;
+        width: 280px;
         height: 150px;
         overflow: hidden;
 
