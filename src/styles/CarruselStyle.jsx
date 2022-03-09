@@ -43,8 +43,8 @@ export const ListaSlider = styled.ul `
         }
     }
     @keyframes cambio {
-        0% {margin-left: 20%;}
-        20% {margin-left: 20%;}
+        0% {margin-left: 1%;}
+        20% {margin-left: -10%;}
         25% {margin-left: -30%;}
         45% {margin-left: -30%;}
         50% {margin-left: -80%;}
