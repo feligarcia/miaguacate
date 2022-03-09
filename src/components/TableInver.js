@@ -1,48 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useTable, usePagination } from "react-table";
 import { Button } from "react-bootstrap";
+import { useExpanded } from "react-table/dist/react-table.development";
+import { useSelector } from "react-redux";
+import Loader from "./Loader";
 
 const Styles = styled.div`
-  width: 50%;
-  table {
-    /* margin: 0 30px;
-    width: 80%; */
-    border-spacing: 0;
-    border: 1px solid green;
-
-    tr {
-      :last-child {
-        td {
-          border-bottom: 0;
-        }
-      }
-    }
-
-    th,
-    td {
-      width: 50%;
-      margin: 0;
-      padding: 3px;
-      border-bottom: 1px solid black;
-      border-right: 1px solid yellow;
-
-      :last-child {
-        width: 50%;
-        border-right: 0;
-      }
-
-      input {
-        font-size: 1rem;
-        padding: 0;
-        margin: 0;
-        border: 0;
-      }
-    }
+  input {
+    background-color: transparent;
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+    border: 0;
   }
-
-  .pagination {
-    padding: 0.5rem;
+  tfoot {
+    p {
+      font-weight: 500;
+    }
   }
 `;
 
@@ -70,7 +45,14 @@ const EditableCell = ({
     setValue(initialValue);
   }, [initialValue]);
 
-  return <input value={value} onChange={onChange} onBlur={onBlur} />;
+  return (
+    <input
+      value={value}
+      onChange={onChange}
+      onBlur={onBlur}
+      className="form-control"
+    />
+  );
 };
 
 // Set our editable cell renderer as the default Cell renderer
@@ -88,23 +70,16 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
     getTableBodyProps,
     headerGroups,
     prepareRow,
-    page,
-    canPreviousPage,
-    canNextPage,
-    pageOptions,
-    pageCount,
-    gotoPage,
-    nextPage,
-    previousPage,
-    setPageSize,
-    state: { pageIndex, pageSize },
+    footerGroups,
+    rows,
+    state: { expanded },
   } = useTable(
     {
       columns,
       data,
       defaultColumn,
       // use the skipPageReset option to disable page resetting temporarily
-      autoResetPage: !skipPageReset,
+
       // updateMyData isn't part of the API, but
       // anything we put into these options will
       // automatically be available on the instance.
@@ -112,24 +87,29 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
       // cell renderer!
       updateMyData,
     },
-    usePagination
+    useExpanded
   );
 
   // Render the UI for your table
   return (
     <>
-      <table {...getTableProps()}>
-        <thead>
+      <table
+        className="table table-striped table-hover table-sm"
+        {...getTableProps()}
+      >
+        <thead className="thead-dark">
           {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
+            <tr scope="row" {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+                <th scope="col" {...column.getHeaderProps()}>
+                  {column.render("Header")}
+                </th>
               ))}
             </tr>
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {page.map((row, i) => {
+          {rows.map((row, i) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
@@ -142,93 +122,162 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
             );
           })}
         </tbody>
-      </table>
-      {/* <div className="pagination">
-        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-          {'<<'}
-        </button>{' '}
-        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-          {'<'}
-        </button>{' '}
-        <button onClick={() => nextPage()} disabled={!canNextPage}>
-          {'>'}
-        </button>{' '}
-        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-          {'>>'}
-        </button>{' '}
-        <span>
-          Page{' '}
-          <strong>
-            {pageIndex + 1} of {pageOptions.length}
-          </strong>{' '}
-        </span>
-        <span>
-          | Go to page:{' '}
-          <input
-            type="number"
-            defaultValue={pageIndex + 1}
-            onChange={e => {
-              const page = e.target.value ? Number(e.target.value) - 1 : 0
-              gotoPage(page)
-            }}
-            style={{ width: '100px' }}
-          />
-        </span>{' '}
-        <select
-          value={pageSize}
-          onChange={e => {
-            setPageSize(Number(e.target.value))
-          }}
-        >
-          {[10, 20, 30, 40, 50].map(pageSize => (
-            <option key={pageSize} value={pageSize}>
-              Show {pageSize}
-            </option>
+        <tfoot>
+          {footerGroups.map((group) => (
+            <tr {...group.getFooterGroupProps()}>
+              {group.headers.map((column) => (
+                <td className="table-active" {...column.getFooterProps()}>
+                  {column.render("Footer")}
+                </td>
+              ))}
+            </tr>
           ))}
-        </select>
-      </div> */}
+        </tfoot>
+      </table>
     </>
   );
 }
 
 const TableInver = () => {
+  let Ano1 = 0
+  const { simulacion } = useSelector((store) => store.app);
+  const [data, setData] = useState(simulacion);
+
+  useEffect(() => {
+    if (simulacion.lenght < 1) {
+      setData(simulacion);
+    }
+  }, [data]);
+
+  const convertirMoneda = (total) => {
+    const dato = new Intl.NumberFormat("es-CO", {
+      style: "currency",
+      currency: "COP",
+      minimumFractionDigits: 0,
+    }).format(total);
+    return dato;
+  };
   const columns = React.useMemo(
     () => [
       {
+        // Build our expander column
+        id: "expander", // Make sure it has an ID
+        Header: ({ getToggleAllRowsExpandedProps, isAllRowsExpanded }) => (
+          <span {...getToggleAllRowsExpandedProps()}>
+            {isAllRowsExpanded ? "👇" : "👉"}
+          </span>
+        ),
+        Cell: ({ row }) =>
+          // Use the row.canExpand and row.getToggleRowExpandedProps prop getter
+          // to build the toggle for expanding a row
+          row.canExpand ? (
+            <span
+              {...row.getToggleRowExpandedProps({
+                style: {
+                  // We can even use the row.depth property
+                  // and paddingLeft to indicate the depth
+                  // of the row
+                  paddingLeft: `${row.depth * 2}rem`,
+                },
+              })}
+            >
+              {row.isExpanded ? "👇" : "👉"}
+            </span>
+          ) : null,
+      },
+      {
         Header: "Inversion",
+        Footer: "",
         columns: [
           {
-            Header: "Costos",
+            Header: "Items",
             accessor: "item",
+            Footer: "Totales",
           },
           {
-            Header: "Inversion",
+            Header: "Año 0",
             accessor: "ano0",
+            Footer: (info) => {
+              // Only calculate total visits if rows change
+              const total = React.useMemo(
+                () => info.rows.reduce((sum, row) => row.values.ano0 + sum, 0),
+                [info.rows]
+              );
+              // resultados.push({'Año 1': total})
+              return <p>= {convertirMoneda(total)}</p>;
+            },
           },
         ],
       },
       {
         Header: "Flujo de caja",
+        Footer: "",
         columns: [
           {
             Header: "Año 1",
             accessor: "ano1",
+            Footer: (info) => {
+              // Only calculate total visits if rows change
+              const total = React.useMemo(
+                () => info.rows.reduce((sum, row) => row.values.ano1 + sum, 0),
+                [info.rows]
+              );
+              Ano1 = total
+              // resultados = {...resultados, 'Año 2':total}
+              return <p>= {convertirMoneda(total)}</p>;
+            },
           },
           {
             Header: "Año 2",
             accessor: "ano2",
+            Footer: (info) => {
+              // Only calculate total visits if rows change
+              const total = React.useMemo(
+                () => info.rows.reduce((sum, row) => row.values.ano2 + sum, 0),
+                [info.rows]
+              );
+
+              return <p>= {convertirMoneda(total)}</p>;
+            },
           },
           {
             Header: "Año 3",
             accessor: "ano3",
+            Footer: (info) => {
+              // Only calculate total visits if rows change
+              const total = React.useMemo(
+                () => info.rows.reduce((sum, row) => row.values.ano3 + sum, 0),
+                [info.rows]
+              );
+
+              return <p>= {convertirMoneda(total)}</p>;
+            },
           },
           {
             Header: "Año 4",
             accessor: "ano4",
+            Footer: (info) => {
+              // Only calculate total visits if rows change
+              const total = React.useMemo(
+                () => info.rows.reduce((sum, row) => row.values.ano4 + sum, 0),
+                [info.rows]
+              );
+
+              return <p>= {convertirMoneda(total)}</p>;
+            },
           },
           {
             Header: "Año 5",
             accessor: "ano5",
+            Footer: (info) => {
+              // Only calculate total visits if rows change
+              const total = React.useMemo(
+                () => info.rows.reduce((sum, row) => row.values.ano5 + sum, 0),
+                [info.rows]
+              );
+
+              return <p>= {convertirMoneda(total)}</p>;
+            },
           },
         ],
       },
@@ -236,46 +285,154 @@ const TableInver = () => {
     []
   );
 
-  const [data, setData] = React.useState([
-    {
-      item: "Siembra",
-      ano0: 100000,
-      ano1: 500,
-      ano2: 0,
-      ano3: 0,
-      ano4: 0,
-      ano5: 0,
-    },
-    {
-      item: "Mantenimiento",
-      ano0: 100000,
-      ano1: 500,
-      ano2: 0,
-      ano3: 0,
-      ano4: 0,
-      ano5: 0,
-    },
-    {
-      item: "Plantulas",
-      ano0: 100000,
-      ano1: 500,
-      ano2: 0,
-      ano3: 0,
-      ano4: 0,
-      ano5: 0,
-    },
-    {
-      item: "Mano de obra",
-      ano0: 100000,
-      ano1: 500,
-      ano2: 0,
-      ano3: 0,
-      ano4: 0,
-      ano5: 0,
-    },
-  ]);
+  // const [data, setData] = React.useState([
+  //   {
+  //     item: "INVERSION",
+  //     ano0: 0,
+  //     ano1: 0,
+  //     ano2: 0,
+  //     ano3: 0,
+  //     ano4: 0,
+  //     ano5: 0,
+  //   },
+  //   {
+  //     item: "Mano de obra",
+  //     ano0: 3540000,
+  //     ano1: 0,
+  //     ano2: 0,
+  //     ano3: 0,
+  //     ano4: 0,
+  //     ano5: 0,
+  //   },
+  //   {
+  //     item: "Insumos y equipos",
+  //     ano0: 13293500,
+  //     ano1: 0,
+  //     ano2: 0,
+  //     ano3: 0,
+  //     ano4: 0,
+  //     ano5: 0,
+  //   },
+  //   {
+  //     item: "Certificaciones",
+  //     ano0: 20000000,
+  //     ano1: 0,
+  //     ano2: 0,
+  //     ano3: 0,
+  //     ano4: 0,
+  //     ano5: 0,
+  //   },
+  //   {
+  //     item: "INGRESOS",
+  //     ano0: 0,
+  //     ano1: 0,
+  //     ano2: 11600000,
+  //     ano3: 87000000,
+  //     ano4: 87000000,
+  //     ano5: 92800000,
+  //   },
+  //   {
+  //     item: "EGRESOS",
+  //     ano0: 0,
+  //     ano1: 0,
+  //     ano2: 0,
+  //     ano3: 0,
+  //     ano4: 0,
+  //     ano5: 0,
+  //   },
+  //   {
+  //     item: "Mano de obra",
+  //     ano0: 0,
+  //     ano1: 3540000,
+  //     ano2: 4000000,
+  //     ano3: 4680000,
+  //     ano4: 5300000,
+  //     ano5: 4900000,
+  //   },
+  //   {
+  //     item: "Gastos insumos",
+  //     ano0: 0,
+  //     ano1: 3850000,
+  //     ano2: 5700000,
+  //     ano3: 5016000,
+  //     ano4: 4000000,
+  //     ano5: 4984000,
+  //   },
+  //   {
+  //     item: "Gastos Fijos",
+  //     ano0: 0,
+  //     ano1: 13200000,
+  //     ano2: 13750000,
+  //     ano3: 14280000,
+  //     ano4: 14850000,
+  //     ano5: 15450000,
+  //   },
+  //   {
+  //     item: "Gastos de Comercialización",
+  //     ano0: 0,
+  //     ano1: 3400000,
+  //     ano2: 3000000,
+  //     ano3: 3000000,
+  //     ano4: 3000000,
+  //     ano5: 3200000,
+  //   },
+  //   {
+  //     item: "Gastos de administrativos",
+  //     ano0: 0,
+  //     ano1: 64000000,
+  //     ano2: 66000000,
+  //     ano3: 90000000,
+  //     ano4: 93000000,
+  //     ano5: 97000000,
+  //   },
+  //   {
+  //     item: "Gastos CIF",
+  //     ano0: 0,
+  //     ano1: 300000,
+  //     ano2: 312000,
+  //     ano3: 324000,
+  //     ano4: 337000,
+  //     ano5: 350000,
+  //   },
+  //   {
+  //     item: "PRESTAMOS",
+  //     ano0: 0,
+  //     ano1: 0,
+  //     ano2: 0,
+  //     ano3: 0,
+  //     ano4: 0,
+  //     ano5: 0,
+  //   },
+  //   {
+  //     item: "Interes",
+  //     ano0: 0,
+  //     ano1: 0,
+  //     ano2: 0,
+  //     ano3: 0,
+  //     ano4: 0,
+  //     ano5: 0,
+  //   },
+  //   {
+  //     item: "Amortización",
+  //     ano0: 0,
+  //     ano1: 0,
+  //     ano2: 0,
+  //     ano3: 0,
+  //     ano4: 0,
+  //     ano5: 0,
+  //   },
+  //   {
+  //     item: "Gastos financieros",
+  //     ano0: 0,
+  //     ano1: 0,
+  //     ano2: 0,
+  //     ano3: 0,
+  //     ano4: 0,
+  //     ano5: 0,
+  //   },
+  // ]);
+
   const [originalData] = React.useState(data);
-  const [skipPageReset, setSkipPageReset] = React.useState(false);
 
   // We need to keep the table from resetting the pageIndex when we
   // Update data. So we can keep track of that flag with a ref.
@@ -285,7 +442,7 @@ const TableInver = () => {
   // original data
   const updateMyData = (rowIndex, columnId, value) => {
     // We also turn on the flag to not reset the page
-    setSkipPageReset(true);
+
     setData((old) =>
       old.map((row, index) => {
         if (index === rowIndex) {
@@ -302,24 +459,26 @@ const TableInver = () => {
   // After data chagnes, we turn the flag back off
   // so that if data actually changes when we're not
   // editing it, the page is reset
-  React.useEffect(() => {
-    setSkipPageReset(false);
-  }, [data]);
+  // React.useEffect(() => {
+
+  // }, [data]);
 
   // Let's add a data resetter/randomizer to help
   // illustrate that flow...
   const resetData = () => setData(originalData);
+  if (data.lenght === 0) {
+    return <Loader />;
+  }
   console.log(data);
+  console.log(Ano1)
   return (
     <Styles>
-      <Table
-        columns={columns}
-        data={data}
-        updateMyData={updateMyData}
-        skipPageReset={skipPageReset}
-      />
-      <Button variant="warning" onClick={resetData}>
+      <Table columns={columns} data={data} updateMyData={updateMyData} />
+      <Button variant="warning" onClick={() => resetData}>
         Reiniciar tabla
+      </Button>
+      <Button variant="success" onClick={() => resetData}>
+        Guardar tabla
       </Button>
     </Styles>
   );

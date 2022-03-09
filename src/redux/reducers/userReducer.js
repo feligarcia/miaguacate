@@ -2,6 +2,7 @@ import { types } from "../types/types.js";
 const InitialState = {
   user: [],
   location: [],
+  userdetails:[],
 
 };
 
@@ -27,6 +28,11 @@ export const userReducer = (state = InitialState, action) => {
         return {
           ...state,
           location: [action.payload],
+        };
+        case types.userlist:
+        return {
+          ...state,
+          userdetails: action.payload,
         };
 
     default:

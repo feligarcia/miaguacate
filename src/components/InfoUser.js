@@ -3,13 +3,12 @@ import Avatar from "../data/images/avatar.png";
 import { useDispatch, useSelector } from "react-redux";
 import { locationAsincrono } from "../redux/actions/userLocation";
 
-const InfoUser = () => {
+const InfoUser =  () => {
   const dispatch = useDispatch();
 
   const location = useSelector((store) => store.user.location);
-  const getUserLocalST =
-    JSON.parse(localStorage.getItem("usermiaguacate")) || [];
-  const { displayName, uid, photoURL } = getUserLocalST;
+  const getUserLocalST =  JSON.parse(localStorage.getItem("usermiaguacate")) || [];
+  const { displayName, uid, photoURL, contact, bsname, bsimage, usergps, usertype } = getUserLocalST;
 
   useEffect(() => {
     dispatch(locationAsincrono());
@@ -32,10 +31,11 @@ const InfoUser = () => {
       </div>
 
       <h3>{displayName}</h3>
-      <b>Ubicación actual: {location ? "🏠" + location : null}</b>
-      <h4>Productor</h4>
-      <h5>Nombre finca: Mi Guadalupe</h5>
-      <h5>Ubicación finca: Guarne, Antioquia</h5>
+      {/* <b>Ubicación actual: {location ? "🏠" + location : null}</b> */}
+      <h4>{usertype}</h4>
+      <h6>Contacto: {contact}</h6>
+      <h6>Nombre finca: {bsname}</h6>
+      <h6>Ubicación finca: {usergps}</h6>
     </div>
   );
 };

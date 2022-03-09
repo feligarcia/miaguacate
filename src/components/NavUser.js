@@ -35,12 +35,10 @@ const NavUser = () => {
   const location = useSelector((store) => store.user.location);
   const getUserLocalST =
     JSON.parse(localStorage.getItem("usermiaguacate")) || [];
-  const { displayName, uid, photoURL } = getUserLocalST;
+  const { displayName, uid, photoURL, usertype } = getUserLocalST;
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(locationAsincrono());
-  }, []);
+  
 
   return (
     <DivNavUser>
@@ -48,7 +46,7 @@ const NavUser = () => {
       <DivSesionUser>
         <DivUserinfo>
           <h3>{displayName}</h3>
-          <h5>Productor</h5>
+          <h5>{usertype}</h5>
           <b>{location ? "🏠" + location : null}</b>
         </DivUserinfo>
 

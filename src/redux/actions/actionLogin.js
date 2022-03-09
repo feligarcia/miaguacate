@@ -7,7 +7,8 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import { facebook, google } from "../../keys/firebaseConfig";
+import { db, facebook, google } from "../../keys/firebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
 
 export const loginFacebook = () => {
   return (dispatch) => {
@@ -15,9 +16,7 @@ export const loginFacebook = () => {
     signInWithPopup(auth, facebook)
       .then(({ user }) => {
         // console.log(user);
-        dispatch(
-          loginSincronico(user.uid, user.displayName, user.photoURL)
-        );
+        dispatch(loginSincronico(user.uid, user.displayName, user.photoURL));
         console.log("Ingreso OK");
       })
       .catch((e) => {
@@ -31,9 +30,7 @@ export const loginGoogle = () => {
     const auth = getAuth();
     signInWithPopup(auth, google)
       .then(({ user }) => {
-        dispatch(
-          loginSincronico(user.uid, user.displayName, user.photoURL)
-        );
+        dispatch(loginSincronico(user.uid, user.displayName, user.photoURL));
         console.log("Ingreso OK");
       })
       .catch((e) => {
@@ -56,12 +53,12 @@ export const loginEmailPassword = (logUser) => {
   };
 };
 
-export const loginSincronico = (uid, displayname,  image) => {
+export const loginSincronico = (uid, displayname, image) => {
   return {
     type: types.login,
     payload: {
       uid,
-      displayname,      
+      displayname,
       image,
     },
   };
@@ -108,5 +105,24 @@ export const createUserActionSincro = (user) => {
   return {
     type: types.register,
     payload: user,
+  };
+};
+
+export const getUserDataASIN = (useruid) => {
+  return async (dispatch) => {
+    const docRef = doc(db, "userBD", useruid);
+    const docCif = await getDoc(docRef);
+    const docDes = docCif.data();
+    dispatch(getUserDatasync(docDes));
+    let sesion = JSON.parse(localStorage.getItem("usermiaguacate")); 
+    let data = Object.assign({},sesion,docDes)   
+    localStorage.setItem("usermiaguacate", JSON.stringify(data));     
+  };
+};
+
+export const getUserDatasync = (userdata) => {
+  return {
+    type: types.userlist,
+    payload: userdata,
   };
 };

@@ -1,15 +1,20 @@
 export const types = {
-  listarpoke: "listar favPokemons",
-  registrarpoke: "registrar favPokemons",
-  borrarpoke: "borrar favPokemons",
-  listpokes: "listar todosPokemons",
+  listarpoke: "listar favPokemons SIN USO",
+  registrarpoke: "registrar favPokemons SIN USO",
+  borrarpoke: "borrar favPokemons SIN USO",
+  listpokes: "listar todosPokemons SIN USO",
 
   login: "Login User",
   register: "Register User",
   logout: "Logout User",
-  search: "search Pokemon",
+  userlist: 'datosUser User',
+
+  search: "search Categoria",
 
   location: 'location User',
-  mostrarModal: 'mostrarModal app'
+  mostrarModal: 'mostrarModal app',
+
+  listarSimulacion: 'showsimu APP',
+  setSimulacion:'setSimulacion APP'
   
 };

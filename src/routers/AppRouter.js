@@ -9,11 +9,17 @@ import PublicRoutes from "./PublicRoutes";
 import { ListRoutes } from "./ListRoutes";
 import NavIni from "../components/NavIni";
 import NavUser from "../components/NavUser";
+import { useDispatch } from "react-redux";
+import { getUserDataASIN } from "../redux/actions/actionLogin";
+import { locationAsincrono } from "../redux/actions/userLocation";
 
 const AppRouter = () => {
+  const dispatch = useDispatch();
   const [checking, setChecking] = useState(true);
   const [isLogin, setIsLogin] = useState(false);
-
+  useEffect(() => {
+    dispatch(locationAsincrono());
+  }, []);
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
@@ -22,6 +28,7 @@ const AppRouter = () => {
         const { uid, displayName, photoURL } = user;
         const sesion = { uid, displayName, photoURL };
         localStorage.setItem("usermiaguacate", JSON.stringify(sesion));
+        dispatch(getUserDataASIN(uid));
       } else {
         setIsLogin(false);
         localStorage.removeItem("usermiaguacate");
@@ -36,34 +43,34 @@ const AppRouter = () => {
 
   return (
     <BrowserRouter>
-        <Routes>
-          <Route
-            path="/*"
-            element={
-              <PrivateRoutes isAuthenticated={isLogin}>
-                <ListRoutes />
-              </PrivateRoutes>
-            }
-          />
+      <Routes>
+        <Route
+          path="/*"
+          element={
+            <PrivateRoutes isAuthenticated={isLogin}>
+              <ListRoutes />
+            </PrivateRoutes>
+          }
+        />
 
-          <Route
-            path="/login"
-            element={
-              <PublicRoutes isAuthenticated={isLogin}>
-                <Login />
-              </PublicRoutes>
-            }
-          />
-          <Route
-            path="/registro"
-            element={
-              <PublicRoutes isAuthenticated={isLogin}>
-                <Registro />
-              </PublicRoutes>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
+        <Route
+          path="/login"
+          element={
+            <PublicRoutes isAuthenticated={isLogin}>
+              <Login />
+            </PublicRoutes>
+          }
+        />
+        <Route
+          path="/registro"
+          element={
+            <PublicRoutes isAuthenticated={isLogin}>
+              <Registro />
+            </PublicRoutes>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

@@ -2,7 +2,9 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
 export function Mapa() {
-  const position = [6.1299096, -75.3773004];
+  const userlocal =  JSON.parse(localStorage.getItem("usermiaguacate")) || [];
+  const position = userlocal.usergps;
+  const name = userlocal.bsname;
 
   return (
     <MapContainer
@@ -16,7 +18,7 @@ export function Mapa() {
       />
       <Marker position={position}>
         <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
+        {name}
         </Popup>
       </Marker>
     </MapContainer>
