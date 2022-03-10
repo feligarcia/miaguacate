@@ -1,7 +1,6 @@
 import React from "react";
 import { Div, TarjetaWrap } from "../styles/CategoriasStyle";
 import { useNavigate } from "react-router-dom";
-import CategoriasDetalle from "../containers/CategoriasDetalle";
 
 const CategoriasHome = () => {
   const navigate = useNavigate();
@@ -11,25 +10,6 @@ const CategoriasHome = () => {
   };
 
 
-  // const handleCategorias = name => {
-
-  //   useEffect(() => {
-  //     nameCategoria()
-  //   }, [name])
-  
-  //   navigate('/categorias/:name')
-  //   const nameCategoria = CategoriasDetalle(name)
-
-  // }
-
-        //     <div className="info">
-        //       <p>
-        //         Las herramientas como palas, azadones, machetes y otros los
-        //         puedes encontrar con nuestros mejores proveedores
-        //       </p>
-        //     </div>
-        //   </div>
-        // </TarjetaWrap>
 
   return (
     <div>
@@ -64,7 +44,7 @@ const CategoriasHome = () => {
               </div>
             </TarjetaWrap>
 
-            <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(87, 169, 55, 100)'}}>
+            <TarjetaWrap className="TarjetaWrap" style={{background:'rgba(87, 169, 55, 100)'}}  onClick={() => handleCategorias('Financiacion')}>
               <div className="tarjeta">
                   <div className="adelante">
                       <h2>Financiación</h2>

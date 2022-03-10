@@ -139,15 +139,21 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
 }
 
 const TableInver = () => {
-  let Ano1 = 0
+  let results = {}
   const { simulacion } = useSelector((store) => store.app);
   const [data, setData] = useState(simulacion);
 
-  useEffect(() => {
-    if (simulacion.lenght < 1) {
-      setData(simulacion);
-    }
-  }, [data]);
+ console.log('aqui afuera el effect')
+
+  useEffect(()=>{
+    setData(simulacion)
+    console.log('dentro del effect')
+  },[simulacion])
+
+  useEffect(()=>{
+    setData(simulacion)
+    console.log('se actualizo data')
+  },[data])
 
   const convertirMoneda = (total) => {
     const dato = new Intl.NumberFormat("es-CO", {
@@ -203,7 +209,7 @@ const TableInver = () => {
                 () => info.rows.reduce((sum, row) => row.values.ano0 + sum, 0),
                 [info.rows]
               );
-              // resultados.push({'Año 1': total})
+              results = Object.assign(results,{'Ano1':total})
               return <p>= {convertirMoneda(total)}</p>;
             },
           },
@@ -222,8 +228,8 @@ const TableInver = () => {
                 () => info.rows.reduce((sum, row) => row.values.ano1 + sum, 0),
                 [info.rows]
               );
-              Ano1 = total
-              // resultados = {...resultados, 'Año 2':total}
+              
+              results = Object.assign(results,{'Ano2':total})
               return <p>= {convertirMoneda(total)}</p>;
             },
           },
@@ -285,154 +291,7 @@ const TableInver = () => {
     []
   );
 
-  // const [data, setData] = React.useState([
-  //   {
-  //     item: "INVERSION",
-  //     ano0: 0,
-  //     ano1: 0,
-  //     ano2: 0,
-  //     ano3: 0,
-  //     ano4: 0,
-  //     ano5: 0,
-  //   },
-  //   {
-  //     item: "Mano de obra",
-  //     ano0: 3540000,
-  //     ano1: 0,
-  //     ano2: 0,
-  //     ano3: 0,
-  //     ano4: 0,
-  //     ano5: 0,
-  //   },
-  //   {
-  //     item: "Insumos y equipos",
-  //     ano0: 13293500,
-  //     ano1: 0,
-  //     ano2: 0,
-  //     ano3: 0,
-  //     ano4: 0,
-  //     ano5: 0,
-  //   },
-  //   {
-  //     item: "Certificaciones",
-  //     ano0: 20000000,
-  //     ano1: 0,
-  //     ano2: 0,
-  //     ano3: 0,
-  //     ano4: 0,
-  //     ano5: 0,
-  //   },
-  //   {
-  //     item: "INGRESOS",
-  //     ano0: 0,
-  //     ano1: 0,
-  //     ano2: 11600000,
-  //     ano3: 87000000,
-  //     ano4: 87000000,
-  //     ano5: 92800000,
-  //   },
-  //   {
-  //     item: "EGRESOS",
-  //     ano0: 0,
-  //     ano1: 0,
-  //     ano2: 0,
-  //     ano3: 0,
-  //     ano4: 0,
-  //     ano5: 0,
-  //   },
-  //   {
-  //     item: "Mano de obra",
-  //     ano0: 0,
-  //     ano1: 3540000,
-  //     ano2: 4000000,
-  //     ano3: 4680000,
-  //     ano4: 5300000,
-  //     ano5: 4900000,
-  //   },
-  //   {
-  //     item: "Gastos insumos",
-  //     ano0: 0,
-  //     ano1: 3850000,
-  //     ano2: 5700000,
-  //     ano3: 5016000,
-  //     ano4: 4000000,
-  //     ano5: 4984000,
-  //   },
-  //   {
-  //     item: "Gastos Fijos",
-  //     ano0: 0,
-  //     ano1: 13200000,
-  //     ano2: 13750000,
-  //     ano3: 14280000,
-  //     ano4: 14850000,
-  //     ano5: 15450000,
-  //   },
-  //   {
-  //     item: "Gastos de Comercialización",
-  //     ano0: 0,
-  //     ano1: 3400000,
-  //     ano2: 3000000,
-  //     ano3: 3000000,
-  //     ano4: 3000000,
-  //     ano5: 3200000,
-  //   },
-  //   {
-  //     item: "Gastos de administrativos",
-  //     ano0: 0,
-  //     ano1: 64000000,
-  //     ano2: 66000000,
-  //     ano3: 90000000,
-  //     ano4: 93000000,
-  //     ano5: 97000000,
-  //   },
-  //   {
-  //     item: "Gastos CIF",
-  //     ano0: 0,
-  //     ano1: 300000,
-  //     ano2: 312000,
-  //     ano3: 324000,
-  //     ano4: 337000,
-  //     ano5: 350000,
-  //   },
-  //   {
-  //     item: "PRESTAMOS",
-  //     ano0: 0,
-  //     ano1: 0,
-  //     ano2: 0,
-  //     ano3: 0,
-  //     ano4: 0,
-  //     ano5: 0,
-  //   },
-  //   {
-  //     item: "Interes",
-  //     ano0: 0,
-  //     ano1: 0,
-  //     ano2: 0,
-  //     ano3: 0,
-  //     ano4: 0,
-  //     ano5: 0,
-  //   },
-  //   {
-  //     item: "Amortización",
-  //     ano0: 0,
-  //     ano1: 0,
-  //     ano2: 0,
-  //     ano3: 0,
-  //     ano4: 0,
-  //     ano5: 0,
-  //   },
-  //   {
-  //     item: "Gastos financieros",
-  //     ano0: 0,
-  //     ano1: 0,
-  //     ano2: 0,
-  //     ano3: 0,
-  //     ano4: 0,
-  //     ano5: 0,
-  //   },
-  // ]);
-
-  const [originalData] = React.useState(data);
+  const [originalData] = React.useState(simulacion);
 
   // We need to keep the table from resetting the pageIndex when we
   // Update data. So we can keep track of that flag with a ref.
@@ -466,15 +325,17 @@ const TableInver = () => {
   // Let's add a data resetter/randomizer to help
   // illustrate that flow...
   const resetData = () => setData(originalData);
-  if (data.lenght === 0) {
+  if (simulacion.lenght === 0) {
     return <Loader />;
   }
   console.log(data);
-  console.log(Ano1)
+  console.log(simulacion);
+  console.log(results)
+  
   return (
     <Styles>
       <Table columns={columns} data={data} updateMyData={updateMyData} />
-      <Button variant="warning" onClick={() => resetData}>
+      <Button variant="warning" onClick={() => resetData()}>
         Reiniciar tabla
       </Button>
       <Button variant="success" onClick={() => resetData}>

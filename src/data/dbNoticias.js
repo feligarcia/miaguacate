@@ -40,6 +40,7 @@ export const noticias = [
     },
 
     {
+        
         "img": "",
         "titulo": "",
         "noticia": ``

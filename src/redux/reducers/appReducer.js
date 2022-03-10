@@ -17,6 +17,10 @@ export const appReducer = (state = initialState, action) => {
     case types.setSimulacion:
       return { ...state, simulacion: action.payload };
 
+    case types.setcredito:
+      // return { ...state, simulacion: Object.assign({},state.simulacion, action.payload) };
+      return { ...state, simulacion: state.simulacion.concat(action.payload) };
+
     case types.mostrarModal:
       return {
         ...state,

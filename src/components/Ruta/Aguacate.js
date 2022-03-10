@@ -4,6 +4,7 @@ import Footer from "../Footer";
 import NavIni from "../NavIni";
 import NavUser from "../NavUser";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 
 const Div = styled.div `
@@ -52,6 +53,7 @@ const Div = styled.div `
 `
 
 const Aguacate = () => {
+  const navigate = useNavigate();
   return (
     <>
       <NavUser />
@@ -66,7 +68,7 @@ const Aguacate = () => {
 
         <img src="https://www.jardineriaon.com/wp-content/uploads/2018/01/planta-del-aguacate.jpg" alt="img planta de aguacates" />
       
-        <button>Siguiente</button>
+        <button onClick={()=>navigate('/laruta/terreno')} >Siguiente</button>
       </Div>
 
       <div

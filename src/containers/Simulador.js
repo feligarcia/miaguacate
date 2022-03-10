@@ -7,7 +7,7 @@ import TableInver from "../components/TableInver";
 import styled from "styled-components";
 import Charts from "../components/Charts";
 import { useDispatch, useSelector } from "react-redux";
-import { setSimula } from "../redux/actions/actionSimulador";
+import { setCredito, setSimula } from "../redux/actions/actionSimulador";
 
 const DivSimu = styled.div`
   margin: 35px 30px;
@@ -63,9 +63,9 @@ const DivDesCreditos = styled.div`
 `;
 
 const DivInput = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   input {
     width: 50px;
   }
@@ -87,7 +87,12 @@ const Simulador = () => {
           <label htmlFor="hectareasfarm" className="">
             Ingrese area del lote en hectareas:
           </label>
-          <input type="number" id="hectareasfarm" placeholder="1" className="form-control"></input>
+          <input
+            type="number"
+            id="hectareasfarm"
+            placeholder="1"
+            className="form-control"
+          ></input>
         </DivInput>
         <DivTable className="table-responsive-sm">
           <TableInver />
@@ -116,14 +121,14 @@ const Simulador = () => {
             style={{ background: "rgba(87, 169, 55, 100)" }}
           >
             <p>TIR</p>
-            <h4>10%</h4>
+            <h4>40%</h4>
           </DivTarjeta>
           <DivTarjeta
             className="tarjeta"
             style={{ background: "rgba(217, 234, 123, 100)" }}
           >
             <p>VPN</p>
-            <h4>Calcular%</h4>
+            <h4> $7.463.830.174</h4>
           </DivTarjeta>
           <DivTarjeta
             className="tarjeta"
@@ -142,8 +147,43 @@ const Simulador = () => {
         </DivResults>
       </DivSimu>
       <DivCreditos>
-        <DivDesCreditos>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Imagen_corporativa_FINAGRO.jpg" />
+        <DivDesCreditos
+          onClick={() =>{
+            // dispatch(clearSimulacion())
+            dispatch(
+              setCredito([
+                {
+                  item: "Interes",
+                  ano0: 0,
+                  ano1: 0,
+                  ano2: 0,
+                  ano3: 0,
+                  ano4: 0,
+                  ano5: 0,
+                },
+                {
+                  item: "Amortización",
+                  ano0: 0,
+                  ano1: 0,
+                  ano2: 0,
+                  ano3: 0,
+                  ano4: 0,
+                  ano5: 0,
+                },
+                {
+                  item: "Gastos financieros",
+                  ano0: 0,
+                  ano1: 0,
+                  ano2: 0,
+                  ano3: 0,
+                  ano4: 0,
+                  ano5: 0,
+                },
+              ])
+            )
+          }}
+        >
+          <img alt ='' src="https://upload.wikimedia.org/wikipedia/commons/4/41/Imagen_corporativa_FINAGRO.jpg" />
           <h3>Credito DTF</h3>
           <p>Cuota Inicial: $3'000.000</p>
           <p>Monto máximo: $284.000.000</p>
@@ -152,7 +192,7 @@ const Simulador = () => {
           <p>Aplica subsidio a la tasa joven agricultor</p>
         </DivDesCreditos>
         <DivDesCreditos>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Banco_Agrario_de_Colombia_logo.svg/1200px-Banco_Agrario_de_Colombia_logo.svg.png" />
+          <img alt='' src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Banco_Agrario_de_Colombia_logo.svg/1200px-Banco_Agrario_de_Colombia_logo.svg.png" />
           <h3>Colombia Agro Produce</h3>
           <p>Periodo de gracia hasta 1 año</p>
           <p>Monto máximo: $100.000.000</p>
@@ -161,7 +201,7 @@ const Simulador = () => {
           <p>Aplica subsidio pequeño productor</p>
         </DivDesCreditos>
         <DivDesCreditos>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/BBVA_2019.svg/2560px-BBVA_2019.svg.png" />
+          <img alt='' src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/BBVA_2019.svg/2560px-BBVA_2019.svg.png" />
           <h3>Agrocredito</h3>
 
           <p>Monto máximo: según capacidad pago</p>

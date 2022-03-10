@@ -8,7 +8,7 @@ const InfoUser =  () => {
 
   const location = useSelector((store) => store.user.location);
   const getUserLocalST =  JSON.parse(localStorage.getItem("usermiaguacate")) || [];
-  const { displayName, uid, photoURL, contact, bsname, bsimage, usergps, usertype } = getUserLocalST;
+  const { displayName, photoURL, contact, bsname, usergps, usertype } = getUserLocalST;
 
   useEffect(() => {
     dispatch(locationAsincrono());

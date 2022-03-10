@@ -7,8 +7,6 @@ import Loader from "../components/Loader";
 import { PrivateRoutes } from "./PrivateRoutes";
 import PublicRoutes from "./PublicRoutes";
 import { ListRoutes } from "./ListRoutes";
-import NavIni from "../components/NavIni";
-import NavUser from "../components/NavUser";
 import { useDispatch } from "react-redux";
 import { getUserDataASIN } from "../redux/actions/actionLogin";
 import { locationAsincrono } from "../redux/actions/userLocation";

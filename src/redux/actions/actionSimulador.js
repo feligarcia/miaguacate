@@ -33,6 +33,14 @@ import {
     };
   };
 
+  export const setCredito = (credito) => {
+    console.log(credito)
+    return {
+      type: types.setcredito,
+      payload: credito,
+    };
+  };
+
   export const setSimula = () => {
     return {
       type: types.setSimulacion,
@@ -153,34 +161,8 @@ import {
           ano3: 0,
           ano4: 0,
           ano5: 0,
-        },
-        {
-          item: "Interes",
-          ano0: 0,
-          ano1: 0,
-          ano2: 0,
-          ano3: 0,
-          ano4: 0,
-          ano5: 0,
-        },
-        {
-          item: "Amortización",
-          ano0: 0,
-          ano1: 0,
-          ano2: 0,
-          ano3: 0,
-          ano4: 0,
-          ano5: 0,
-        },
-        {
-          item: "Gastos financieros",
-          ano0: 0,
-          ano1: 0,
-          ano2: 0,
-          ano3: 0,
-          ano4: 0,
-          ano5: 0,
-        },
+        }
+        
       ],
     };
   };

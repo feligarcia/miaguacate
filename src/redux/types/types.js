@@ -15,6 +15,7 @@ export const types = {
   mostrarModal: 'mostrarModal app',
 
   listarSimulacion: 'showsimu APP',
-  setSimulacion:'setSimulacion APP'
+  setSimulacion:'setSimulacion APP',
+  setcredito: 'setcredito APP'
   
 };

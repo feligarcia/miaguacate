@@ -1,17 +1,32 @@
-import React from 'react';
-import NavIni from './NavIni';
-import NavUser from './NavUser';
+import React from "react";
+import NavIni from "./NavIni";
+import NavUser from "./NavUser";
 import styled from "styled-components";
-import Footer from "./Footer"
+import Footer from "./Footer";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import { negocios } from "../data/dbNegocios";
+import { useParams } from "react-router-dom";
+import L from "leaflet";
+delete L.Icon.Default.prototype._getIconUrl;
 
-const Div = styled.div `
+
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+  iconUrl: require("leaflet/dist/images/marker-icon.png"),
+  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
+});
+
+const Div = styled.div`
   margin: 80px 0;
 
   & .flex {
     display: flex;
     width: 100%;
     justify-content: center;
+    align-items:center;
     margin-bottom: 80px;
+    background-color: rgba(0,0,0,0.1);
 
     & .perfil-proveedor {
       margin: 0 150px;
@@ -25,58 +40,87 @@ const Div = styled.div `
     }
 
     & .negocio-proveedor {
-
       & img {
-      width: 650px;
+        width: 300px;
       }
     }
   }
 
-  & .ubicacion{
+  & .ubicacion {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items:center;
 
-    & img {
-      width: 1150px;
-      height: 250px;
-      object-fit: cover;
-    }
   }
-`
-
+`;
+const DivMapa = styled.div`
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+  width:100%;
+`;
 const DetalleProveedor = () => {
+  const params = useParams();
+  console.log(params)
+  const negocioDetail = negocios.filter(e=>e.id === params.id)
+  console.log(negocioDetail)
   return (
     <div>
-        <NavUser />
-        <NavIni />
-        {/* <h1>Detalle proveedor</h1> */}
-
-      <Div>
+      <NavUser />
+      <NavIni />
+      
+{negocioDetail.map(e=>(
+  <Div key={e.id}>
         <div className="flex">
-            <div className="perfil-proveedor">
-              <img className="foto-proveedor" src="https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg" alt="foto del proveedor"/>
-              <h4>Agronegocios Don JuanCarlos</h4>
-              <h4>Insumos</h4>
-              <h4>Cel. 3007878790</h4>
-            </div>
+          <div className="perfil-proveedor">
+            {/* <img
+              className="foto-proveedor"
+              src="https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg"
+              alt="foto del proveedor"
+            /> */}
+             <h2>{e.nombre}</h2>
+              <p>{e.categoria}</p>
+              <p>{e.contacto}</p>
+              <p>{e.metadata}</p>
+          </div>
 
-            <div className="negocio-proveedor">
-              <img src="https://www.agromaquinaria.es/empresas/fotos/170.jpg" alt="negocio-proveedor" />
-            </div>
+          <div className="negocio-proveedor">
+            <img
+              src={e.bsimage}
+              alt="negocio-proveedor"
+            />
+          </div>
         </div>
 
         <div className="ubicacion">
           <h1>Ubicacion</h1>
-          <img className="ubicacion-proveedor" src="https://depor.com/resizer/L1M5aABYUluI0652Au5PL5fHu7w=/620x0/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/PH3PWFC47JC7DEUR7RNSBE4Q5Y.jpg" alt="ubicacion-proveedor" />
+          <DivMapa>
+            <MapContainer
+              center={e.gps}
+              zoom={13}
+              style={{ width: "100%", height: "100%" }}
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={e.gps}>
+                <Popup>{e.nombre} <br></br> {e.contacto}</Popup>
+              </Marker>
+            </MapContainer>
+          </DivMapa>
         </div>
       </Div>
 
+))}
+      
+
       <Footer />
     </div>
+  );
+};
 
-  )
-}
-
-export default DetalleProveedor
+export default DetalleProveedor;

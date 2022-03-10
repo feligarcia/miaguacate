@@ -24,6 +24,7 @@
   position: absolute;
   top: 0;
   content: '';
+  
 }
 .loader:before {
   left: -1.5em;
