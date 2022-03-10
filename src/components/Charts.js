@@ -68,10 +68,13 @@ const Charts = () => {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="ano0" />
+        <XAxis dataKey="INGRESOS" />
         <YAxis />
         <Tooltip />
         <Legend />
+        <Bar dataKey="ano5" fill="#8884d8" />
+        <Bar dataKey="ano4" fill="#8884d8" />
+        <Bar dataKey="ano3" fill="#82ca9d" />
         <Bar dataKey="ano2" fill="#8884d8" />
         <Bar dataKey="ano1" fill="#82ca9d" />
       </BarChart>

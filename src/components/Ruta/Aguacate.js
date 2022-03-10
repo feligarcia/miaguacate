@@ -72,29 +72,29 @@ const Aguacate = () => {
       </Div>
 
       <div
-        class="btn-group"
+        className="btn-group"
         role="group"
         aria-label="Basic radio toggle button group"
       >
         <input
           type="radio"
-          class="btn-check"
+          className="btn-check"
           name="btnfincap"
           id="btnfincapF"
           autocomplete="off"
         />
-        <label class="btn btn-outline-success" for="btnfincapF">
+        <label className="btn btn-outline-success" htmlFor="btnfincapF">
           Finalizado
         </label>
         <input
           type="radio"
-          class="btn-check"
+          className="btn-check"
           name="btnfincap"
           id="btnfincapP"
           autocomplete="off"
           checked
         />
-        <label class="btn btn-outline-secondary" for="btnfincapP">
+        <label className="btn btn-outline-secondary" htmlFor="btnfincapP">
           Pendiente
         </label>
       </div>

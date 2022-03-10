@@ -96,7 +96,7 @@ const CategoriasDetalle = () => {
               <p>{e.categoria}</p>
               <p>{e.contacto}</p>
               <p>{e.metadata}</p>
-              <div class="btn-group">
+              <div className="btn-group">
                 <Button
                   variant="warning"
                   onClick={() => handleOnSetView(e.gps)}

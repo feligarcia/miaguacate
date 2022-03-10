@@ -4,7 +4,7 @@ export const negocios = [
     nombre: "Agroequipos",
     gps: [6.153549, -75.3969001],
     contacto: "3113003929",
-    categoria: 'Equipos',
+    categoria: 'Herramientas y maquinaria',
     metadata:'azadones, martillos',
     bsimage:'https://motosierras.shop/wp-content/uploads/2020/04/motosierras-stihl.jpg'
   },

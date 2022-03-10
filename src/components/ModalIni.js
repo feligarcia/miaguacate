@@ -43,35 +43,35 @@ export const ModalIni = () => {
               perfil para brindarte la mejor experiencia de usuario.
             </p>
             <form>
-            <div class="form-check form-switch">
+            <div className="form-check form-switch">
               <input
-                class="form-check-input"
+                className="form-check-input"
                 type="checkbox"
                 id="check1"
               />
-              <label class="form-check-label" for="check1">
+              <label className="form-check-label" for="check1">
                 ¿Tienes un terreno propio o alquilado para siembra?
               </label>
             </div>
-            <div class="form-check form-switch">
+            <div className="form-check form-switch">
               <input
-                class="form-check-input"
+                className="form-check-input"
                 type="checkbox"
                 id="check2"
                 
               />
-              <label class="form-check-label" for="check2">
+              <label className="form-check-label" for="check2">
                 ¿Tienes conocimiento sobre el cultivo de aguacate?
               </label>
             </div>
-            <div class="form-check form-switch">
+            <div className="form-check form-switch">
               <input
-                class="form-check-input"
+                className="form-check-input"
                 type="checkbox"
                 id="check3"
                 
               />
-              <label class="form-check-label" for="check3">
+              <label className="form-check-label" for="check3">
                 ¿Cuentas con recursos propios o creditos?
               </label>
             </div>
