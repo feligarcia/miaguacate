@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/miaguacate/static/css/main.a48b0d62.css",
+    "main.js": "/miaguacate/static/js/main.aa57d4ce.js",
+    "static/media/logo.png": "/miaguacate/static/media/logo.83de414e592e040146e3.png",
+    "static/media/avatar.png": "/miaguacate/static/media/avatar.a6143582309785dca610.png",
+    "index.html": "/miaguacate/index.html",
+    "main.a48b0d62.css.map": "/miaguacate/static/css/main.a48b0d62.css.map",
+    "main.aa57d4ce.js.map": "/miaguacate/static/js/main.aa57d4ce.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a48b0d62.css",
+    "static/js/main.aa57d4ce.js"
+  ]
+}
